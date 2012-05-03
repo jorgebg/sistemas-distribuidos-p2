@@ -35,7 +35,8 @@ char* obtenerIpServer(char* server);
  * */
 
 int debug = 0;
-int serverConnected;
+char* ipLocal;
+int port;
 CLIENT *_client;
 
 
@@ -63,6 +64,9 @@ void f_ping(){
 	
 	// Write code here
 	struct timespec ini, end;
+	parametro2* parametro = malloc(sizeof(*parametro));
+	parametro->ip = ipLocal;
+	parametro->port = 111;
 
 	//ack
 	char ack;
@@ -71,7 +75,7 @@ void f_ping(){
 	clock_gettime(CLOCK_REALTIME, &ini);
 
 	//Llamada a metodo remoto. Recibe el ack
-	f_ping_1(NULL, &ack, _client);
+	f_ping_1(parametro, &ack, _client);
 
 	//Tiempo
 	clock_gettime( CLOCK_REALTIME, &end);
@@ -91,6 +95,8 @@ void f_swap(char *src, char *dst){
 	
 	// Write code here
 	parametro4* parametro = malloc(sizeof(*parametro));
+	parametro->ip = ipLocal;
+	parametro->port = 111;
 	retorno2* retorno = malloc(sizeof(*retorno));
 
 	//Obtiene los datos del fichero
@@ -123,19 +129,19 @@ void f_swap(char *src, char *dst){
 	parametro->longitud = longitud;
 
 	//Le envia un cadena
+	parametro->cadena = calloc(total, sizeof(char));
 	parametro->cadena = copia;
 
 	//Llamada a metodo remoto. Le envía y recibe los datos
+
 	f_swap_1(parametro, retorno, _client);
 
 	//Recibe la cantidad de letras cambiadas
 	unsigned int letrasCambiadas = retorno->letrasCambiadas;
 
-
 	//Recibe la nueva cadena
-	free(copia);
-	copia = calloc(longitud, sizeof(char));
-	recibir(serverConnected,copia, longitud);
+	copia = calloc(total, sizeof(char));
+	copia = retorno->cadena;
 
 	//Se imprime por pantalla
 	fprintf(stderr, "%i\n", letrasCambiadas);
@@ -149,6 +155,7 @@ void f_swap(char *src, char *dst){
 
 	fclose(archivo2);
 	free(copia);
+
 }
 
 /* HASH
@@ -163,6 +170,8 @@ void f_hash(char *src){
 	
 	// Write code here
 	parametro4* parametro = malloc(sizeof(*parametro));
+	parametro->ip = ipLocal;
+	parametro->port = 111;
 
 	//Obtiene los datos del fichero
 	FILE *archivo;
@@ -221,6 +230,8 @@ void f_check(char *src, int hash){
 	
 	// Write code here
 	parametro5* parametro = malloc(sizeof(*parametro));
+	parametro->ip = ipLocal;
+	parametro->port = 111;
 
 	//Obtiene los datos del fichero
 	FILE *archivo;
@@ -284,9 +295,12 @@ void f_stat(){
 	
 	// Write code here
 	retorno5* retorno = malloc(sizeof(*retorno));
+	parametro2* parametro = malloc(sizeof(*parametro));
+	parametro->ip = ipLocal;
+	parametro->port = 111;
 
 	//Llamada a metodo remoto. Le envía y recibe los datos
-	f_stat_1(NULL, retorno, _client);
+	f_stat_1(parametro, retorno, _client);
 
 	//Recibe el valor de ping
 	unsigned int ping = retorno->ping;
@@ -328,27 +342,25 @@ void f_quit(){
 
 }
 
-void recibir(int serverConnected, char* copia, unsigned int longitud){
-	//Envia la nueva copia de la cadena
-	int datosRestantes = longitud;
-	int enviado = 0;
-
-	while (datosRestantes != 0){
-		char* cadena = calloc(datosRestantes, sizeof(char));
-		enviado = read(serverConnected, cadena, datosRestantes);
-		datosRestantes = datosRestantes - enviado;
-		strcat(copia, cadena);
-		free(cadena);
-	}
-}
-
 //Obtiene la ip a traves de su hostname
 char* obtenerIpServer(char* server) {
 	struct sockaddr_in host;
-
+	fprintf(stderr, "2 \n");
 	host.sin_addr = * (struct in_addr*) gethostbyname(server)->h_addr;
+	fprintf(stderr, "3 \n");
 	return inet_ntoa(host.sin_addr);
 }
+
+//Obtiene la ip local
+char* obtenerIpLocal() {
+	struct sockaddr_in host;
+	char hostname[255];
+
+	gethostname(hostname, 255);
+	host.sin_addr = * (struct in_addr*) gethostbyname(hostname)->h_addr;
+	return inet_ntoa(host.sin_addr);
+}
+
 
 void shell() {
 	char line[1024];
@@ -453,34 +465,27 @@ int main(int argc, char *argv[]){
 	 *  NO SE SI HAY QUE USAR STDERR O STDOUT. Realmente no piden salida, se puede usar printf.
 	 **/
 
-	struct sockaddr_in serverIn;
+	//Se crea el cliente
+	_client = malloc(sizeof(*_client));
+	_client = clnt_create (server, SERVICIOPROG, SERVICIOVERS, "TCP");
 
-	//Se crea el socket
-	serverConnected = socket(AF_INET, SOCK_STREAM, 0);
-
-	if(serverConnected < 0){
-		perror("Error creando socket");
-	}
-	int port;
-	//Obtiene la direccion del servidor
-	serverIn.sin_family = AF_INET;
-	serverIn.sin_port = htons(port);
-	serverIn.sin_addr.s_addr = inet_addr(server);
-	//serverIn.sin_addr.s_addr = INADDR_ANY;
-
-	//Comprueba si se puede conectar
-	if(connect(serverConnected, (struct sockaddr *) &serverIn, sizeof(serverIn)) <0){
+	if (_client == NULL) {
+		//Si no se crea el cliente, entonces busca la ip del server
 		char* ip = obtenerIpServer(server);
-		serverIn.sin_addr.s_addr = inet_addr(ip);
-		if(connect(serverConnected, (struct sockaddr *) &serverIn, sizeof(serverIn)) <0){
-			fprintf(stderr, "Error en la conexion con el servidor %s:%i", server, port);
+		_client = clnt_create (ip, SERVICIOPROG, SERVICIOVERS, "TCP");
+		if (_client == NULL) {
+			perror("Error creando el cliente");
 			exit(-1);
-		}else
-			shell();
-	}else
-		shell();
+		}
+	}
 
-	close(serverConnected);
+	ipLocal = obtenerIpLocal();
+
+	//Llama a la consola
+	shell();
+
+	//Se cierra el cliente
+	clnt_destroy (_client);
 
 	exit(EXIT_SUCCESS);
 }

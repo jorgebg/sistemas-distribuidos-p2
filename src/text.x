@@ -1,4 +1,9 @@
 /* Write code here */
+struct parametro2{
+	string ip<>;
+	int port;
+};
+
 struct parametro4{
 	string ip<>;
 	int port;
@@ -29,11 +34,11 @@ struct retorno5{
 
 program SERVICIOPROG{
    version SERVICIOVERS{
-	char F_PING() = 1;
+	char F_PING(parametro2) = 1;
 	retorno2 F_SWAP(parametro4) = 2;
 	unsigned int F_HASH(parametro4) = 3;
 	char F_CHECK(parametro5) = 4;
-	retorno5 F_STAT() = 5;
+	retorno5 F_STAT(parametro2) = 5;
 	int F_QUIT() = 6;
    } = 1;
 } = 99;
