@@ -60,12 +60,13 @@ int f_swap_1_svc(parametro4 *parametro, retorno2 *retorno, struct svc_req* req){
 	char* ip = parametro->ip;
 	int port = parametro->port;
 
+
 	//Se imprime por pantalla
 	fprintf(stderr, "s>%s:%i init swap %u\n", ip, port, longitud);
 
 	//Recibe la cadena
 	char* copia = calloc(longitud, sizeof(char));
-	copia = parametro->cadena;
+	strcpy(copia, parametro->cadena);
 
 	//Intercambia los valores de la cadena
 	int i=0;
@@ -73,29 +74,27 @@ int f_swap_1_svc(parametro4 *parametro, retorno2 *retorno, struct svc_req* req){
 
 	for(i=0; i< longitud; i++){
 		if(copia[i] >= 'A' && copia[i] <= 'Z') {
-			copia[i] = copia[i] + 32;
-			/* resta a c el valor ascii de A */
+			copia[i] = copia[i] + 32;    /* resta a c el valor ascii de A */
 			letrasCambiadas++;
 		}else if(copia[i] >= 'a' && copia[i] <= 'z') {
-			copia[i] = copia[i] - 32;
-			/* resta a c el valor ascii de a */
+			copia[i] = copia[i] - 32;    /* resta a c el valor ascii de a */
 			letrasCambiadas++;
 		}
 	}
-/*
+
 	//Envia la cantidad de letras cambiadas
 	retorno->letrasCambiadas = letrasCambiadas;
 
 	//Envia la nueva copia de la cadena
 	retorno->cadena = calloc(longitud, sizeof(char));
-	retorno->cadena = copia;
+	strcpy(retorno->cadena, copia);
 
 	//Se imprime por pantalla
 	fprintf(stderr, "s> %s:%i swap = %u\n", ip, port, letrasCambiadas);
 	fprintf(stderr, "\n");
 
 	//Se suma la llamada
-	_swap++;*/
+	_swap++;
 
 	return 1;
 }

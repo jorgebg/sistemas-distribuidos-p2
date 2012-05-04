@@ -130,31 +130,31 @@ void f_swap(char *src, char *dst){
 
 	//Le envia un cadena
 	parametro->cadena = calloc(total, sizeof(char));
-	parametro->cadena = copia;
+	strcpy(parametro->cadena, copia);
 
 	//Llamada a metodo remoto. Le envía y recibe los datos
-
 	f_swap_1(parametro, retorno, _client);
 
 	//Recibe la cantidad de letras cambiadas
 	unsigned int letrasCambiadas = retorno->letrasCambiadas;
 
+
 	//Recibe la nueva cadena
-	copia = calloc(total, sizeof(char));
-	copia = retorno->cadena;
+	strcpy(copia, retorno->cadena);
 
 	//Se imprime por pantalla
 	fprintf(stderr, "%i\n", letrasCambiadas);
 
 	//Graba los datos en un fichero
+	printf("%s 4 \n",retorno->cadena);
 	FILE *archivo2 = fopen(dst,"w");
+	printf("%s 4 \n",retorno->cadena);
 	if(archivo2 == NULL)
 		exit(1);
-
+	printf("%s 5 \n",retorno->cadena);
 	fputs(copia, archivo2);
-
-	fclose(archivo2);
 	free(copia);
+	fclose(archivo2);
 
 }
 
