@@ -131,7 +131,7 @@ void f_swap(char *src, char *dst){
 	//Cierra el fichero
 	fclose(archivo);
 
-	// Obtiene la ip y el puerto
+	// Se le pasa la ip, el puerto y la longitud
 	parametro->ip = (char*)calloc(strlen(ipLocal),sizeof(char));
 	memcpy(parametro->ip, ipLocal, strlen(ipLocal));
 
@@ -155,6 +155,7 @@ void f_swap(char *src, char *dst){
 	//Cierra el fichero
 	fclose(archivo2);
 
+	//Libera memoria
 	free(parametro->ip);
 	free(parametro->cadena);
 	free(parametro);
@@ -165,69 +166,6 @@ void f_swap(char *src, char *dst){
 	_swap++;
 
 }
-
-/*void f_swap(char *src, char *dst){
-	if (debug)
-		printf("SWAP <SRC=%s> <DST=%s>\n", src, dst);
-
-	// Write code here
-	struct stat fileStat;
-	int total = 0;
-	char* resultado;
-	char* copia;
-	parametro4* parametro = malloc(sizeof(*parametro));
-	retorno2* retorno = malloc(sizeof(*retorno));
-
-	if(stat(src,&fileStat) < 0)
-        	exit(1);
-
-	// Calloc y memcpy
-	parametro->ip = (char*)calloc(strlen(ipLocal),sizeof(char));
-	memcpy(parametro->ip, ipLocal, strlen(ipLocal));
-
-	parametro->port = 111;
-
-	total = fileStat.st_size;
-
-	//Le envia la longitud del texto
-	parametro->longitud = total;
-
-	//Obtiene los datos del fichero
-	FILE *archivo = fopen(src,"r");
-
-	//Le envia un cadena
-	parametro->cadena = (char*)calloc(total, sizeof(char));
-	fread(parametro->cadena,sizeof(char),total,archivo);
-
-	fclose(archivo);
-
-	//Llamada a metodo remoto. Le envía y recibe los datos
-	f_swap_1(parametro, retorno, _client);
-
-	//Recibe la cantidad de letras cambiadas y las imprime por pantalla
-	fprintf(stderr, "%u \n", retorno->letrasCambiadas);
-
-	//Graba los datos en un fichero
-	FILE *archivo2 = fopen(dst,"w");
-	printf("%s 4 \n",retorno->cadena);
-	if(archivo2 == NULL)
-		exit(1);
-	printf("%s 5 \n",retorno->cadena);
-	//Recibe la nueva cadena y la mete en el archivo
-	fputs(retorno->cadena, archivo2);
-
-	fclose(archivo2);
-
-	//Se suma la llamada
-	_swap++;
-
-	free(parametro->ip);
-	free(parametro->cadena);
-	free(parametro);
-	free(retorno->cadena);
-	free(retorno);
-
-}*/
 
 /* HASH
  *

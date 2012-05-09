@@ -47,7 +47,7 @@ int f_ping_1_svc(parametro2 *parametro, char *b, struct svc_req* req){
 
 int f_swap_1_svc(parametro4 *parametro, retorno2 *retorno, struct svc_req* req){
 	//Recibe la longitud del texto, la ip y el puerto y la imprime por pantalla
-		fprintf(stderr, "s>%s:%i init swap %u\n", parametro->ip, parametro->port, parametro->longitud);
+	fprintf(stderr, "s>%s:%i init swap %u\n", parametro->ip, parametro->port, parametro->longitud);
 
 	//Recibe la cadena
 	char* copia;
@@ -81,45 +81,6 @@ int f_swap_1_svc(parametro4 *parametro, retorno2 *retorno, struct svc_req* req){
 
 	return 1;
 }
-
-
-/*int f_swap_1_svc(parametro4 *parametro, retorno2 *retorno, struct svc_req* req){
-
-	//Recibe la longitud del texto, la ip y el puerto y la imprime por pantalla
-	fprintf(stderr, "s>%s:%i init swap %u\n", parametro->ip, parametro->port, parametro->longitud);
-
-	//Recibe la cadena
-	char* copia;
-	copia = (char*)calloc(parametro->longitud, sizeof(char));
-	memcpy(copia, parametro->cadena, parametro->longitud);
-
-	//Intercambia los valores de la cadena
-	int i=0;
-	unsigned int letrasCambiadas = 0;
-
-	for(i=0; i< parametro->longitud; i++){
-		if(copia[i] >= 'A' && copia[i] <= 'Z') {
-			copia[i] = copia[i] + 32;    // resta a c el valor ascii de A
-			letrasCambiadas++;
-		}else if(copia[i] >= 'a' && copia[i] <= 'z') {
-			copia[i] = copia[i] - 32;    // resta a c el valor ascii de a
-			letrasCambiadas++;
-		}
-	}
-
-	//Envia la cantidad de letras cambiadas
-	retorno->letrasCambiadas = letrasCambiadas;
-
-	//Envia la nueva copia de la cadena
-	retorno->cadena = (char*)calloc(parametro->longitud, sizeof(char));
-	memcpy(retorno->cadena, copia, parametro->longitud);
-
-	//Se imprime por pantalla
-	fprintf(stderr, "s> %s:%i swap = %u\n", parametro->ip, parametro->port, retorno->letrasCambiadas);
-	fprintf(stderr, "\n");
-
-	return 1;
-}*/
 
 /* HASH
  *
