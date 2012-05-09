@@ -19,17 +19,19 @@ struct parametro5{
 	unsigned int hash;
 };
 
-struct retorno2{
-	unsigned int letrasCambiadas;
-	string cadena<>;
-};
-
-struct retorno5{
+struct parametro7{
+	string ip<>;
+	int port;
 	unsigned int ping;
 	unsigned int swap;
 	unsigned int hash;
 	unsigned int check;
 	unsigned int stat;
+};
+
+struct retorno2{
+	unsigned int letrasCambiadas;
+	string cadena<>;
 };
 
 program SERVICIOPROG{
@@ -38,7 +40,7 @@ program SERVICIOPROG{
 	retorno2 F_SWAP(parametro4) = 2;
 	unsigned int F_HASH(parametro4) = 3;
 	char F_CHECK(parametro5) = 4;
-	retorno5 F_STAT(parametro2) = 5;
+	void F_STAT(parametro7) = 5;
 	int F_QUIT() = 6;
    } = 1;
 } = 99;

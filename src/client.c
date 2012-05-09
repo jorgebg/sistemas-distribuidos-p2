@@ -11,6 +11,7 @@
 #include <time.h>
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <sys/stat.h>
 #include <arpa/inet.h>
 #include <netdb.h>
 #include "text.h"
@@ -22,6 +23,12 @@
  * Galan Galiano, Cristian
  *
  * */
+
+unsigned int _ping;
+unsigned int _swap;
+unsigned int _hash;
+unsigned int _check;
+unsigned int _stat;
 
 /**
  * Funciones
@@ -81,6 +88,9 @@ void f_ping(){
 	clock_gettime( CLOCK_REALTIME, &end);
 
 	fprintf(stderr, "%f s\n", (float)(1.0*(1.0*end.tv_nsec - ini.tv_nsec*1.0)*1e-9 + 1.0*end.tv_sec - 1.0*ini.tv_sec));
+
+	//Se suma la llamada
+	_ping++;
 }
 
 /* SWAP
@@ -94,70 +104,64 @@ void f_swap(char *src, char *dst){
 		printf("SWAP <SRC=%s> <DST=%s>\n", src, dst);
 	
 	// Write code here
+	struct stat fileStat;
+	char caracteres[10];
+	int total = 0;
+	char* resultado;
+	char* copia;
 	parametro4* parametro = malloc(sizeof(*parametro));
-	parametro->ip = ipLocal;
-	parametro->port = 111;
 	retorno2* retorno = malloc(sizeof(*retorno));
+
+	if(stat(src,&fileStat) < 0)
+        	exit(1);
+
+	// Calloc y memcpy
+	parametro->ip = (char*)calloc(strlen(ipLocal),sizeof(char));
+	memcpy(parametro->ip, ipLocal, strlen(ipLocal));
+
+	parametro->port = 111;
+
+	total = fileStat.st_size;
+
+	//Le envia la longitud del texto
+	parametro->longitud = total;
 
 	//Obtiene los datos del fichero
 	FILE *archivo = fopen(src,"r");
-	if(archivo == NULL)
-		exit(1);
-
-	char caracteres[10];
-	int total = 0;
-	char* copia = calloc(total, sizeof(char));
-	char* resultado;
-
-	//Se obtiene el fichero
-	while (fgets(caracteres,10,archivo) != NULL)
-	{
-		total = total + 10;
-		resultado = calloc(total, sizeof(char));
-
-		strcpy(resultado, copia);
-		strcat(resultado, caracteres);
-		copia = calloc(total, sizeof(char));
-		strcpy(copia, resultado);
-	}
-
-	free(resultado);
-	fclose(archivo);
-
-	//Le envia la longitud del texto
-	unsigned int longitud = strlen(copia);
-	parametro->longitud = longitud;
 
 	//Le envia un cadena
 	parametro->cadena = calloc(total, sizeof(char));
-	strcpy(parametro->cadena, copia);
+	fread(parametro->cadena,sizeof(char),total,archivo);
+
+	fclose(archivo);
 
 	//Llamada a metodo remoto. Le envía y recibe los datos
 	f_swap_1(parametro, retorno, _client);
 
-	//Recibe la cantidad de letras cambiadas
-	unsigned int letrasCambiadas = retorno->letrasCambiadas;
-
-
-	//Recibe la nueva cadena
-	strcpy(copia, retorno->cadena);
-
-	//Se imprime por pantalla
-	fprintf(stderr, "%i\n", letrasCambiadas);
+	//Recibe la cantidad de letras cambiadas y las imprime por pantalla
+	fprintf(stderr, "%u \n", retorno->letrasCambiadas);
 
 	//Graba los datos en un fichero
-	printf("%s 4 \n",retorno->cadena);
 	FILE *archivo2 = fopen(dst,"w");
 	printf("%s 4 \n",retorno->cadena);
 	if(archivo2 == NULL)
 		exit(1);
 	printf("%s 5 \n",retorno->cadena);
-	fputs(copia, archivo2);
-	free(copia);
+	//Recibe la nueva cadena y la mete en el archivo
+	fputs(retorno->cadena, archivo2);
+
 	fclose(archivo2);
 
-}
+	//Se suma la llamada
+	_swap++;
 
+	free(parametro->ip);
+	free(parametro->cadena);
+	free(parametro);
+	free(retorno->cadena);
+	free(retorno);
+
+}
 /* HASH
  *
  * PARAMETRO: Ip, port, longitud, cadena.
@@ -216,6 +220,9 @@ void f_hash(char *src){
 	fprintf(stderr, "%u\n", hash);
 
 	free(copia);
+
+	//Se suma la llamada
+	_hash++;
 }
 
 /* CHECK
@@ -281,6 +288,9 @@ void f_check(char *src, int hash){
 		fprintf(stderr, "OK\n");
 
 	free(copia);
+
+	//Se suma la llamada
+	_check++;
 }
 
 /* STAT
@@ -294,43 +304,35 @@ void f_stat(){
 		printf("STAT\n");
 	
 	// Write code here
-	retorno5* retorno = malloc(sizeof(*retorno));
-	parametro2* parametro = malloc(sizeof(*parametro));
+	parametro7* parametro = malloc(sizeof(*parametro));
 	parametro->ip = ipLocal;
 	parametro->port = 111;
+	parametro->ping = _ping;
+	parametro->swap = _swap;
+	parametro->hash = _hash;
+	parametro->check = _check;
+	parametro->stat = _stat;
 
 	//Llamada a metodo remoto. Le envía y recibe los datos
-	f_stat_1(parametro, retorno, _client);
-
-	//Recibe el valor de ping
-	unsigned int ping = retorno->ping;
+	f_stat_1(parametro, NULL, _client);
 
 	//Se imprime por pantalla
-	fprintf(stderr, "ping %u \n", ping);
-
-	//Recibe el valor de swap
-	unsigned int swap = retorno->swap;
+	fprintf(stderr, "ping %u \n", _ping);
 
 	//Se imprime por pantalla
-	fprintf(stderr, "swap %u \n", swap);
-
-	//Recibe el valor de hash
-	unsigned int hash = retorno->hash;
+	fprintf(stderr, "swap %u \n", _swap);
 
 	//Se imprime por pantalla
-	fprintf(stderr, "hash %u \n", hash);
-
-	//Recibe el valor de check
-	unsigned int check = retorno->hash;
+	fprintf(stderr, "hash %u \n", _hash);
 
 	//Se imprime por pantalla
-	fprintf(stderr, "check %u \n", check);
-
-	//Recibe el valor de stat
-	unsigned int stat = retorno->stat;
+	fprintf(stderr, "check %u \n", _check);
 
 	//Se imprime por pantalla
-	fprintf(stderr, "stat %u \n", stat);
+	fprintf(stderr, "stat %u \n", _stat);
+
+	//Se suma la llamada
+	_stat++;
 }
 
 void f_quit(){

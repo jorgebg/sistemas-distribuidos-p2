@@ -8,12 +8,6 @@
  *
  * */
 
-
-unsigned int _ping;
-unsigned int _swap;
-unsigned int _hash;
-unsigned int _check;
-unsigned int _stat;
 /*
  * PRIMER PARAMETRO DE ENTRADA: Equivale a socket de entrada.
  * SEGUNDO DE SALIDA: Equivale a socket de salida.
@@ -41,9 +35,6 @@ int f_ping_1_svc(parametro2 *parametro, char *b, struct svc_req* req){
 	fprintf(stderr, "s> %s:%i ping\n", ip, port);
 	fprintf(stderr, "\n");
 
-	//Se suma la llamada
-	_ping++;
-
 	return 1;
 }
 
@@ -53,26 +44,22 @@ int f_ping_1_svc(parametro2 *parametro, char *b, struct svc_req* req){
  * RETORNO: letrasCambiadas, cadena.
  * RETURN: ¿?.
  **/
+
 int f_swap_1_svc(parametro4 *parametro, retorno2 *retorno, struct svc_req* req){
 
-	//Recibe la longitud del texto, la ip y el puerto
-	unsigned int longitud = parametro->longitud;
-	char* ip = parametro->ip;
-	int port = parametro->port;
-
-
-	//Se imprime por pantalla
-	fprintf(stderr, "s>%s:%i init swap %u\n", ip, port, longitud);
+	//Recibe la longitud del texto, la ip y el puerto y la imprime por pantalla
+	fprintf(stderr, "s>%s:%i init swap %u\n", parametro->ip, parametro->port, parametro->longitud);
 
 	//Recibe la cadena
-	char* copia = calloc(longitud, sizeof(char));
-	strcpy(copia, parametro->cadena);
+	char* copia;
+	copia = (char*)calloc(parametro->longitud, sizeof(char));
+	memcpy(copia, parametro->cadena, parametro->longitud);
 
 	//Intercambia los valores de la cadena
 	int i=0;
 	unsigned int letrasCambiadas = 0;
 
-	for(i=0; i< longitud; i++){
+	for(i=0; i< parametro->longitud; i++){
 		if(copia[i] >= 'A' && copia[i] <= 'Z') {
 			copia[i] = copia[i] + 32;    /* resta a c el valor ascii de A */
 			letrasCambiadas++;
@@ -86,15 +73,12 @@ int f_swap_1_svc(parametro4 *parametro, retorno2 *retorno, struct svc_req* req){
 	retorno->letrasCambiadas = letrasCambiadas;
 
 	//Envia la nueva copia de la cadena
-	retorno->cadena = calloc(longitud, sizeof(char));
-	strcpy(retorno->cadena, copia);
+	retorno->cadena = (char*)calloc(parametro->longitud, sizeof(char));
+	memcpy(retorno->cadena, copia, parametro->longitud);
 
 	//Se imprime por pantalla
-	fprintf(stderr, "s> %s:%i swap = %u\n", ip, port, letrasCambiadas);
+	fprintf(stderr, "s> %s:%i swap = %u\n", parametro->ip, parametro->port, retorno->letrasCambiadas);
 	fprintf(stderr, "\n");
-
-	//Se suma la llamada
-	_swap++;
 
 	return 1;
 }
@@ -132,8 +116,7 @@ int f_hash_1_svc(parametro4 *parametro, unsigned int *b, struct svc_req* req){
 	//Envia el hash
 	*b = hash;
 
-	//Se suma la llamada
-	_hash++;
+
 
 	return 1;
 }
@@ -179,9 +162,6 @@ int f_check_1_svc(parametro5 *parametro, char *b, struct svc_req* req){
 	//Envia si es correcto el hash
 	*b = correcto;
 
-	//Se suma la llamada
-	_check++;
-
 	return 1;
 }
 
@@ -191,35 +171,14 @@ int f_check_1_svc(parametro5 *parametro, char *b, struct svc_req* req){
  * RETORNO: Ping, swap, hash, check, stat
  * RETURN: ¿?.
  **/
-int f_stat_1_svc(parametro2 *parametro, retorno5 *retorno, struct svc_req* req){
-	//Recibe el ip y port
-	char* ip = parametro->ip;
-	int port = parametro->port;
+int f_stat_1_svc(parametro7 *parametro, void *void_t, struct svc_req* req){
+	//Se imprime por pantalla
+	fprintf(stderr, "s> %s:%i init stat\n", parametro->ip, parametro->port);
 
 	//Se imprime por pantalla
-	fprintf(stderr, "s> %s:%i init stat\n", ip, port);
-
-	//Envia ping
-	retorno->ping = _ping;
-
-	//Envia swap
-	retorno->swap = _swap;
-
-	//Envia hash
-	retorno->hash = _hash;
-
-	//Envia check
-	retorno->check = _check;
-
-	//Envia stat
-	retorno->stat = _stat;
-
-	//Se imprime por pantalla
-	fprintf(stderr, "s> %s:%i stat = %u %u %u %u %u\n", ip, port, _ping, _swap, _hash, _check, _stat);
+	fprintf(stderr, "s> %s:%i stat = %u %u %u %u %u\n",
+			parametro->ip, parametro->port, parametro->ping, parametro->swap, parametro->hash, parametro->check, parametro->stat);
 	fprintf(stderr, "\n");
-
-	//Se suma la llamada
-	_stat++;
 
 	return 1;
 }
