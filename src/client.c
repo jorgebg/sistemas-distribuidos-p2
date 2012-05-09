@@ -99,13 +99,79 @@ void f_ping(){
  * RETORNO: letrasCambiadas, cadena.
  * RETURN: ¿?.
  **/
+
 void f_swap(char *src, char *dst){
 	if (debug)
 		printf("SWAP <SRC=%s> <DST=%s>\n", src, dst);
 	
 	// Write code here
+	parametro4* parametro = malloc(sizeof(*parametro));
+	retorno2* retorno;
+
+	retorno = malloc(sizeof(*retorno));
+	bzero(retorno, sizeof(*retorno));
+
+	//Crea las variables locales para obtener la longitud del fichero
+	int total = 0;
+	struct stat statFichero;
+
+	if(stat(src,&statFichero) < 0)
+        	exit(1);
+	total = statFichero.st_size;
+
+	//Abre un fichero
+	FILE *archivo = fopen(src,"r");
+	if(archivo == NULL)
+		exit(1);
+
+	//Crea la memoria de una cadena y copia a memoria el fichero
+	parametro->cadena = calloc(total, sizeof(char));
+	fread(parametro->cadena,sizeof(char),total,archivo);
+
+	//Cierra el fichero
+	fclose(archivo);
+
+	// Obtiene la ip y el puerto
+	parametro->ip = (char*)calloc(strlen(ipLocal),sizeof(char));
+	memcpy(parametro->ip, ipLocal, strlen(ipLocal));
+
+	parametro->port = 111;
+	parametro->longitud = total;
+
+	//Llamada a metodo remoto. Le envía y recibe los datos
+	f_swap_1(parametro, retorno, _client);
+
+	//Recibe la cantidad de letras cambiadas y las imprime por pantalla
+	fprintf(stderr, "%u \n", retorno->letrasCambiadas);
+
+	//Graba los datos en un fichero
+	FILE *archivo2 = fopen(dst,"w");
+	if(archivo2 == NULL)
+		exit(1);
+
+	//Recibe la nueva cadena y la mete en el archivo
+	fputs(retorno->cadena, archivo2);
+
+	//Cierra el fichero
+	fclose(archivo2);
+
+	free(parametro->ip);
+	free(parametro->cadena);
+	free(parametro);
+	free(retorno->cadena);
+	free(retorno);
+
+	//Se suma la llamada
+	_swap++;
+
+}
+
+/*void f_swap(char *src, char *dst){
+	if (debug)
+		printf("SWAP <SRC=%s> <DST=%s>\n", src, dst);
+
+	// Write code here
 	struct stat fileStat;
-	char caracteres[10];
 	int total = 0;
 	char* resultado;
 	char* copia;
@@ -130,7 +196,7 @@ void f_swap(char *src, char *dst){
 	FILE *archivo = fopen(src,"r");
 
 	//Le envia un cadena
-	parametro->cadena = calloc(total, sizeof(char));
+	parametro->cadena = (char*)calloc(total, sizeof(char));
 	fread(parametro->cadena,sizeof(char),total,archivo);
 
 	fclose(archivo);
@@ -161,7 +227,8 @@ void f_swap(char *src, char *dst){
 	free(retorno->cadena);
 	free(retorno);
 
-}
+}*/
+
 /* HASH
  *
  * PARAMETRO: Ip, port, longitud, cadena.
