@@ -1,0 +1,896 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" class="client-nojs" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Distributed computing - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.20wmf2" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Distributed_computing&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Distributed_computing&amp;action=edit" />
+<link rel="apple-touch-icon" href="//en.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.teahouse%7Cext.wikihiero%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" type="text/css" media="all" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" type="text/css" media="all" />
+<style type="text/css" media="all">a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:7:d5a1bf6cbd05fc6cc2705e47f52062dc */</style>
+
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
+<script type="text/javascript">if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Distributed_computing","wgTitle":"Distributed computing","wgCurRevisionId":491129441,"wgArticleId":8501,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Distributed computing"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgRelevantPageName":"Distributed_computing","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgSearchNamespaces":[0],"wgVectorEnabledModules":{"collapsiblenav":true,"collapsibletabs":true,"editwarning":true,"expandablesearch":false,"footercleanup":false,"sectioneditlinks":false,"simplesearch":true,"experiments":true},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgTrackingToken":"69f213af3f4bbdc293b3ee69f91270a0","wikilove-recipient":"","wikilove-edittoken":"+\\","wikilove-anon":0,"mbEmailEnabled":true,"mbUserEmail":false,"mbIsEmailConfirmationPending":false,"wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","Geo":{"city":"","country":""},"wgNoticeProject":"wikipedia"});
+}</script><script type="text/javascript">if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3
+,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikilove-enabled":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false,"gadget-teahouse":1,"gadget-mySandbox":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+
+/* cache key: enwiki:resourceloader:filter:minify-js:7:15f947b8a5d6ceebd1f399c3a1526c80 */
+}</script>
+<script type="text/javascript">if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.20wmf2/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Distributed_computing skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">
+				<span dir="auto">Distributed computing</span>
+			</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Distributed computing</b> is a field of <a href="/wiki/Computer_science" title="Computer science">computer science</a> that studies distributed systems. A <b>distributed system</b> consists of multiple autonomous <a href="/wiki/Computer" title="Computer">computers</a> that communicate through a <a href="/wiki/Computer_network" title="Computer network">computer network</a>. The computers interact with each other in order to achieve a common goal. A <a href="/wiki/Computer_program" title="Computer program">computer program</a> that runs in a distributed system is called a <b>distributed program</b>, and <b>distributed programming</b> is the process of writing such programs.<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup></p>
+<p>Distributed computing also refers to the use of distributed systems to solve computational problems. In distributed computing, a problem is divided into many tasks, each of which is solved by one or more computers.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></p>
+<p>They communicate with each other by message passing.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup></p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Parallel_and_distributed_computing"><span class="tocnumber">1.1</span> <span class="toctext">Parallel and distributed computing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#History"><span class="tocnumber">2</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Applications"><span class="tocnumber">3</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Theoretical_foundations"><span class="tocnumber">4</span> <span class="toctext">Theoretical foundations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Models"><span class="tocnumber">4.1</span> <span class="toctext">Models</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#An_example"><span class="tocnumber">4.2</span> <span class="toctext">An example</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Complexity_measures"><span class="tocnumber">4.3</span> <span class="toctext">Complexity measures</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Other_problems"><span class="tocnumber">4.4</span> <span class="toctext">Other problems</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Properties_of_distributed_systems"><span class="tocnumber">4.5</span> <span class="toctext">Properties of distributed systems</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Architectures"><span class="tocnumber">5</span> <span class="toctext">Architectures</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Notes"><span class="tocnumber">7</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Further_reading"><span class="tocnumber">9</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#External_links"><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=1" title="Edit section: Introduction">edit</a>]</span> <span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>The word <i>distributed</i> in terms such as "distributed system", "distributed programming", and "<a href="/wiki/Distributed_algorithm" title="Distributed algorithm">distributed algorithm</a>" originally referred to computer networks where individual computers were physically distributed within some geographical area.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>4<span>]</span></a></sup> The terms are nowadays used in a much wider sense, even referring to autonomous <a href="/wiki/Process_(computing)" title="Process (computing)">processes</a> that run on the same physical computer and interact with each other by message passing.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>5<span>]</span></a></sup> While there is no single definition of a distributed system,<sup id="cite_ref-harvtxt.7CGhosh.7C2007_5-0" class="reference"><a href="#cite_note-harvtxt.7CGhosh.7C2007-5"><span>[</span>6<span>]</span></a></sup> the following defining properties are commonly used:</p>
+<ul>
+<li>There are several autonomous computational entities, each of which has its own local <a href="/wiki/Memory_(computers)" title="Memory (computers)" class="mw-redirect">memory</a>.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>7<span>]</span></a></sup></li>
+</ul>
+<ul>
+<li>The entities communicate with each other by <a href="/wiki/Message_passing" title="Message passing">message passing</a>.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>8<span>]</span></a></sup></li>
+</ul>
+<p>In this article, the computational entities are called <i>computers</i> or <i><a href="/wiki/Node_(networking)" title="Node (networking)">nodes</a></i>.</p>
+<p>A distributed system may have a common goal, such as solving a large computational problem.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>9<span>]</span></a></sup> Alternatively, each computer may have its own user with individual needs, and the purpose of the distributed system is to coordinate the use of shared resources or provide communication services to the users.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>10<span>]</span></a></sup></p>
+<p>Other typical properties of distributed systems include the following:</p>
+<ul>
+<li>The system has to <a href="/wiki/Fault-tolerance" title="Fault-tolerance" class="mw-redirect">tolerate failures</a> in individual computers.<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>11<span>]</span></a></sup></li>
+<li>The structure of the system (network topology, network latency, number of computers) is not known in advance, the system may consist of different kinds of computers and network links, and the system may change during the execution of a distributed program.<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>12<span>]</span></a></sup></li>
+<li>Each computer has only a limited, incomplete view of the system. Each computer may know only one part of the input.<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span>[</span>13<span>]</span></a></sup></li>
+</ul>
+<div class="thumb tright">
+<div class="thumbinner" style="width:262px;"><a href="/wiki/File:Distributed-parallel.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Distributed-parallel.svg/260px-Distributed-parallel.svg.png" width="260" height="357" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Distributed-parallel.svg" class="internal" title="Enlarge"><img src="//bits.wikimedia.org/skins-1.20wmf1/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+(a)–(b)&#160;A&#160;distributed system.<br />
+(c)&#160;A&#160;parallel system.</div>
+</div>
+</div>
+<h3><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=2" title="Edit section: Parallel and distributed computing">edit</a>]</span> <span class="mw-headline" id="Parallel_and_distributed_computing">Parallel and distributed computing</span></h3>
+<p>Distributed systems are groups of networked computers, which have the same goal for their work. The terms "<a href="/wiki/Concurrent_computing" title="Concurrent computing">concurrent computing</a>", "<a href="/wiki/Parallel_computing" title="Parallel computing">parallel computing</a>", and "distributed computing" have a lot of overlap, and no clear distinction exists between them.<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span>[</span>14<span>]</span></a></sup> The same system may be characterised both as "parallel" and "distributed"; the processors in a typical distributed system run concurrently in parallel.<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span>[</span>15<span>]</span></a></sup> Parallel computing may be seen as a particular tightly-coupled form of distributed computing,<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span>[</span>16<span>]</span></a></sup> and distributed computing may be seen as a loosely-coupled form of parallel computing.<sup id="cite_ref-harvtxt.7CGhosh.7C2007_5-1" class="reference"><a href="#cite_note-harvtxt.7CGhosh.7C2007-5"><span>[</span>6<span>]</span></a></sup> Nevertheless, it is possible to roughly classify concurrent systems as "parallel" or "distributed" using the following criteria:</p>
+<ul>
+<li>In parallel computing, all processors have access to a <a href="/wiki/Shared_memory" title="Shared memory">shared memory</a>. Shared memory can be used to exchange information between processors.<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span>[</span>17<span>]</span></a></sup></li>
+<li>In distributed computing, each processor has its own private memory (<a href="/wiki/Distributed_memory" title="Distributed memory">distributed memory</a>). Information is exchanged by passing messages between the processors.<sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span>[</span>18<span>]</span></a></sup></li>
+</ul>
+<p>The figure on the right illustrates the difference between distributed and parallel systems. Figure (a) is a schematic view of a typical distributed system; as usual, the system is represented as a network topology in which each node is a computer and each line connecting the nodes is a communication link. Figure (b) shows the same distributed system in more detail: each computer has its own local memory, and information can be exchanged only by passing messages from one node to another by using the available communication links. Figure (c) shows a parallel system in which each processor has a direct access to a shared memory.</p>
+<p>The situation is further complicated by the traditional uses of the terms parallel and distributed <i>algorithm</i> that do not quite match the above definitions of parallel and distributed <i>systems</i>; see the section <a href="#Theoretical_foundations">Theoretical foundations</a> below for more detailed discussion. Nevertheless, as a rule of thumb, high-performance parallel computation in a shared-memory multiprocessor uses parallel algorithms while the coordination of a large-scale distributed system uses distributed algorithms.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=3" title="Edit section: History">edit</a>]</span> <span class="mw-headline" id="History">History</span></h2>
+<p>The use of concurrent processes that communicate by message-passing has its roots in <a href="/wiki/Operating_system" title="Operating system">operating system</a> architectures studied in the 1960s.<sup id="cite_ref-18" class="reference"><a href="#cite_note-18"><span>[</span>19<span>]</span></a></sup> The first widespread distributed systems were <a href="/wiki/Local-area_networks" title="Local-area networks" class="mw-redirect">local-area networks</a> such as <a href="/wiki/Ethernet" title="Ethernet">Ethernet</a> that was invented in the 1970s.<sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span>[</span>20<span>]</span></a></sup></p>
+<p><a href="/wiki/ARPANET" title="ARPANET">ARPANET</a>, the predecessor of the <a href="/wiki/Internet" title="Internet">Internet</a>, was introduced in the late 1960s, and ARPANET <a href="/wiki/E-mail" title="E-mail" class="mw-redirect">e-mail</a> was invented in the early 1970s. E-mail became the most successful application of ARPANET,<sup id="cite_ref-20" class="reference"><a href="#cite_note-20"><span>[</span>21<span>]</span></a></sup> and it is probably the earliest example of a large-scale <a href="/wiki/Distributed_application" title="Distributed application">distributed application</a>. In addition to ARPANET, and its successor, the Internet, other early worldwide computer networks included <a href="/wiki/Usenet" title="Usenet">Usenet</a> and <a href="/wiki/FidoNet" title="FidoNet">FidoNet</a> from 1980s, both of which were used to support distributed discussion systems.</p>
+<p>The study of distributed computing became its own branch of computer science in the late 1970s and early 1980s. The first conference in the field, <a href="/wiki/Symposium_on_Principles_of_Distributed_Computing" title="Symposium on Principles of Distributed Computing">Symposium on Principles of Distributed Computing</a> (PODC), dates back to 1982, and its European counterpart <a href="/wiki/International_Symposium_on_Distributed_Computing" title="International Symposium on Distributed Computing">International Symposium on Distributed Computing</a> (DISC) was first held in 1985.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=4" title="Edit section: Applications">edit</a>]</span> <span class="mw-headline" id="Applications">Applications</span></h2>
+<p>There are two main reasons for using distributed systems and distributed computing. First, the very nature of the application may <i>require</i> the use of a communication network that connects several computers. For example, data is produced in one physical location and it is needed in another location.</p>
+<p>Second, there are many cases in which the use of a single computer would be possible in principle, but the use of a distributed system is <i>beneficial</i> for practical reasons. For example, it may be more cost-efficient to obtain the desired level of performance by using a <a href="/wiki/Cluster_(computing)" title="Cluster (computing)" class="mw-redirect">cluster</a> of several low-end computers, in comparison with a single high-end computer. A distributed system can be more reliable than a non-distributed system, as there is no <a href="/wiki/Single_point_of_failure" title="Single point of failure">single point of failure</a>. Moreover, a distributed system may be easier to expand and manage than a monolithic uniprocessor system.<sup id="cite_ref-21" class="reference"><a href="#cite_note-21"><span>[</span>22<span>]</span></a></sup></p>
+<p>Examples of distributed systems and applications of distributed computing include the following:<sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span>[</span>23<span>]</span></a></sup></p>
+<ul>
+<li><a href="/wiki/Telecommunication" title="Telecommunication">Telecommunication</a> networks:
+<ul>
+<li><a href="/wiki/Telephone_network" title="Telephone network">Telephone networks</a> and <a href="/wiki/Cellular_network" title="Cellular network">cellular networks</a>.</li>
+<li><a href="/wiki/Computer_network" title="Computer network">Computer networks</a> such as the <a href="/wiki/Internet" title="Internet">Internet</a>.</li>
+<li><a href="/wiki/Wireless_sensor_networks" title="Wireless sensor networks" class="mw-redirect">Wireless sensor networks</a>.</li>
+<li><a href="/wiki/Routing_algorithm" title="Routing algorithm" class="mw-redirect">Routing algorithms</a>.</li>
+</ul>
+</li>
+<li>Network applications:
+<ul>
+<li><a href="/wiki/World_wide_web" title="World wide web" class="mw-redirect">World wide web</a> and <a href="/wiki/Peer-to-peer_network" title="Peer-to-peer network" class="mw-redirect">peer-to-peer networks</a>.</li>
+<li><a href="/wiki/Massively_multiplayer_online_game" title="Massively multiplayer online game">Massively multiplayer online games</a> and <a href="/wiki/Virtual_reality" title="Virtual reality">virtual reality</a> communities.</li>
+<li><a href="/wiki/Distributed_database" title="Distributed database">Distributed databases</a> and <a href="/wiki/Distributed_database_management_system" title="Distributed database management system">distributed database management systems</a>.</li>
+<li><a href="/wiki/Distributed_file_system" title="Distributed file system">Network file systems</a>.</li>
+<li>Distributed information processing systems such as banking systems and airline reservation systems.</li>
+</ul>
+</li>
+<li>Real-time process control:
+<ul>
+<li><a href="/wiki/Aircraft" title="Aircraft">Aircraft</a> control systems.</li>
+<li><a href="/wiki/Industrial_control_systems" title="Industrial control systems" class="mw-redirect">Industrial control systems</a>.</li>
+</ul>
+</li>
+<li><a href="/wiki/Parallel_computation" title="Parallel computation" class="mw-redirect">Parallel computation</a>:
+<ul>
+<li><a href="/wiki/Scientific_computing" title="Scientific computing" class="mw-redirect">Scientific computing</a>, including <a href="/wiki/Cluster_computing" title="Cluster computing" class="mw-redirect">cluster computing</a> and <a href="/wiki/Grid_computing" title="Grid computing">grid computing</a> and various <a href="/wiki/Volunteer_computing" title="Volunteer computing">volunteer computing</a> projects; see the <a href="/wiki/List_of_distributed_computing_projects" title="List of distributed computing projects">list of distributed computing projects</a>.</li>
+<li><a href="/wiki/Distributed_rendering" title="Distributed rendering" class="mw-redirect">Distributed rendering</a> in computer graphics.</li>
+</ul>
+</li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=5" title="Edit section: Theoretical foundations">edit</a>]</span> <span class="mw-headline" id="Theoretical_foundations">Theoretical foundations</span></h2>
+<div class="rellink relarticle mainarticle">Main article: <a href="/wiki/Distributed_algorithm" title="Distributed algorithm">Distributed algorithm</a></div>
+<h3><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=6" title="Edit section: Models">edit</a>]</span> <span class="mw-headline" id="Models">Models</span></h3>
+<p>Many tasks that we would like to automate by using a computer are of question–answer type: we would like to ask a question and the computer should produce an answer. In <a href="/wiki/Theoretical_computer_science" title="Theoretical computer science">theoretical computer science</a>, such tasks are called <a href="/wiki/Computational_problem" title="Computational problem">computational problems</a>. Formally, a computational problem consists of <i>instances</i> together with a <i>solution</i> for each instance. Instances are questions that we can ask, and solutions are desired answers to these questions.</p>
+<p>Theoretical computer science seeks to understand which computational problems can be solved by using a computer (<a href="/wiki/Computability_theory_(computer_science)" title="Computability theory (computer science)" class="mw-redirect">computability theory</a>) and how efficiently (<a href="/wiki/Computational_complexity_theory" title="Computational complexity theory">computational complexity theory</a>). Traditionally, it is said that a problem can be solved by using a computer if we can design an <a href="/wiki/Algorithm" title="Algorithm">algorithm</a> that produces a correct solution for any given instance. Such an algorithm can be implemented as a <a href="/wiki/Computer_program" title="Computer program">computer program</a> that runs on a general-purpose computer: the program reads a problem instance from <a href="/wiki/Information" title="Information">input</a>, performs some computation, and produces the solution as <a href="/wiki/Output" title="Output">output</a>. Formalisms such as <a href="/wiki/Random_access_machine" title="Random access machine">random access machines</a> or <a href="/wiki/Universal_Turing_machine" title="Universal Turing machine">universal Turing machines</a> can be used as abstract models of a sequential general-purpose computer executing such an algorithm.</p>
+<p>The field of concurrent and distributed computing studies similar questions in the case of either multiple computers, or a computer that executes a network of interacting processes: which computational problems can be solved in such a network and how efficiently? However, it is not at all obvious what is meant by “solving a problem” in the case of a concurrent or distributed system: for example, what is the task of the algorithm designer, and what is the concurrent or distributed equivalent of a sequential general-purpose computer?</p>
+<p>The discussion below focusses on the case of multiple computers, although many of the issues are the same for concurrent processes running on a single computer.</p>
+<p>Three viewpoints are commonly used:</p>
+<dl>
+<dt>Parallel algorithms in shared-memory model</dt>
+</dl>
+<ul>
+<li>All computers have access to a shared memory. The algorithm designer chooses the program executed by each computer.</li>
+<li>One theoretical model is the <a href="/wiki/Parallel_random_access_machine" title="Parallel random access machine" class="mw-redirect">parallel random access machines</a> (PRAM) that are used.<sup id="cite_ref-23" class="reference"><a href="#cite_note-23"><span>[</span>24<span>]</span></a></sup> However, the classical PRAM model assumes synchronous access to the shared memory.</li>
+<li>A model that is closer to the behavior of real-world multiprocessor machines and takes into account the use of machine instructions, such as <a href="/wiki/Compare-and-swap" title="Compare-and-swap">Compare-and-swap</a> (CAS), is that of <i>asynchronous shared memory</i>. There is a wide body of work on this model, a summary of which can be found in the literature.<sup id="cite_ref-24" class="reference"><a href="#cite_note-24"><span>[</span>25<span>]</span></a></sup><sup id="cite_ref-25" class="reference"><a href="#cite_note-25"><span>[</span>26<span>]</span></a></sup></li>
+</ul>
+<dl>
+<dt>Parallel algorithms in message-passing model</dt>
+</dl>
+<ul>
+<li>The algorithm designer chooses the structure of the network, as well as the program executed by each computer.</li>
+<li>Models such as <a href="/wiki/Boolean_circuits" title="Boolean circuits" class="mw-redirect">Boolean circuits</a> and <a href="/wiki/Sorting_network" title="Sorting network">sorting networks</a> are used.<sup id="cite_ref-26" class="reference"><a href="#cite_note-26"><span>[</span>27<span>]</span></a></sup> A Boolean circuit can be seen as a computer network: each gate is a computer that runs an extremely simple computer program. Similarly, a sorting network can be seen as a computer network: each comparator is a computer.</li>
+</ul>
+<dl>
+<dt>Distributed algorithms in message-passing model</dt>
+</dl>
+<ul>
+<li>The algorithm designer only chooses the computer program. All computers run the same program. The system must work correctly regardless of the structure of the network.</li>
+<li>A commonly used model is a <a href="/wiki/Graph_(mathematics)" title="Graph (mathematics)">graph</a> with one <a href="/wiki/Finite-state_machine" title="Finite-state machine">finite-state machine</a> per node.</li>
+</ul>
+<p>In the case of distributed algorithms, computational problems are typically related to graphs. Often the graph that describes the structure of the computer network <i>is</i> the problem instance. This is illustrated in the following example.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=7" title="Edit section: An example">edit</a>]</span> <span class="mw-headline" id="An_example">An example</span></h3>
+<p>Consider the computational problem of finding a coloring of a given graph <i>G</i>. Different fields might take the following approaches:</p>
+<dl>
+<dt>Centralized algorithms</dt>
+</dl>
+<ul>
+<li>The graph <i>G</i> is encoded as a string, and the string is given as input to a computer. The computer program finds a coloring of the graph, encodes the coloring as a string, and outputs the result.</li>
+</ul>
+<dl>
+<dt>Parallel algorithms</dt>
+</dl>
+<ul>
+<li>Again, the graph <i>G</i> is encoded as a string. However, multiple computers can access the same string in parallel. Each computer might focus on one part of the graph and produce a colouring for that part.</li>
+<li>The main focus is on high-performance computation that exploits the processing power of multiple computers in parallel.</li>
+</ul>
+<dl>
+<dt>Distributed algorithms</dt>
+</dl>
+<ul>
+<li>The graph <i>G</i> is the structure of the computer network. There is one computer for each node of <i>G</i> and one communication link for each edge of <i>G</i>. Initially, each computer only knows about its immediate neighbours in the graph <i>G</i>; the computers must exchange messages with each other to discover more about the structure of <i>G</i>. Each computer must produce its own colour as output.</li>
+<li>The main focus is on coordinating the operation of an arbitrary distributed system.</li>
+</ul>
+<p>While the field of parallel algorithms has a different focus than the field of distributed algorithms, there is a lot of interaction between the two fields. For example, the <a href="/wiki/Cole%E2%80%93Vishkin_algorithm" title="Cole–Vishkin algorithm" class="mw-redirect">Cole–Vishkin algorithm</a> for graph colouring<sup id="cite_ref-27" class="reference"><a href="#cite_note-27"><span>[</span>28<span>]</span></a></sup> was originally presented as a parallel algorithm, but the same technique can also be used directly as a distributed algorithm.</p>
+<p>Moreover, a parallel algorithm can be implemented either in a parallel system (using shared memory) or in a distributed system (using message passing).<sup id="cite_ref-28" class="reference"><a href="#cite_note-28"><span>[</span>29<span>]</span></a></sup> The traditional boundary between parallel and distributed algorithms (choose a suitable network vs. run in any given network) does not lie in the same place as the boundary between parallel and distributed systems (shared memory vs. message passing).</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=8" title="Edit section: Complexity measures">edit</a>]</span> <span class="mw-headline" id="Complexity_measures">Complexity measures</span></h3>
+<p>In parallel algorithms, yet another resource in addition to time and space is the number of computers. Indeed, often there is a trade-off between the running time and the number of computers: the problem can be solved faster if there are more computers running in parallel (see <a href="/wiki/Speedup" title="Speedup">speedup</a>). If a decision problem can be solved in <a href="/wiki/Polylogarithmic_time" title="Polylogarithmic time" class="mw-redirect">polylogarithmic time</a> by using a polynomial number of processors, then the problem is said to be in the class <a href="/wiki/NC_(complexity)" title="NC (complexity)">NC</a>.<sup id="cite_ref-29" class="reference"><a href="#cite_note-29"><span>[</span>30<span>]</span></a></sup> The class NC can be defined equally well by using the PRAM formalism or Boolean circuits – PRAM machines can simulate Boolean circuits efficiently and vice versa.<sup id="cite_ref-30" class="reference"><a href="#cite_note-30"><span>[</span>31<span>]</span></a></sup></p>
+<p>In the analysis of distributed algorithms, more attention is usually paid on communication operations than computational steps. Perhaps the simplest model of distributed computing is a synchronous system where all nodes operate in a lockstep fashion. During each <i>communication round</i>, all nodes in parallel (1)&#160;receive the latest messages from their neighbours, (2)&#160;perform arbitrary local computation, and (3)&#160;send new messages to their neighbours. In such systems, a central complexity measure is the number of synchronous communication rounds required to complete the task.<sup id="cite_ref-31" class="reference"><a href="#cite_note-31"><span>[</span>32<span>]</span></a></sup></p>
+<p>This complexity measure is closely related to the <a href="/wiki/Diameter_(graph_theory)" title="Diameter (graph theory)" class="mw-redirect">diameter</a> of the network. Let <i>D</i> be the diameter of the network. On the one hand, any computable problem can be solved trivially in a synchronous distributed system in approximately 2<i>D</i> communication rounds: simply gather all information in one location (<i>D</i> rounds), solve the problem, and inform each node about the solution (<i>D</i> rounds).</p>
+<p>On the other hand, if the running time of the algorithm is much smaller than <i>D</i> communication rounds, then the nodes in the network must produce their output without having the possibility to obtain information about distant parts of the network. In other words, the nodes must make globally consistent decisions based on information that is available in their <i>local neighbourhood</i>. Many distributed algorithms are known with the running time much smaller than <i>D</i> rounds, and understanding which problems can be solved by such algorithms is one of the central research questions of the field.<sup id="cite_ref-32" class="reference"><a href="#cite_note-32"><span>[</span>33<span>]</span></a></sup></p>
+<p>Other commonly used measures are the total number of bits transmitted in the network (cf. <a href="/wiki/Communication_complexity" title="Communication complexity">communication complexity</a>).</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=9" title="Edit section: Other problems">edit</a>]</span> <span class="mw-headline" id="Other_problems">Other problems</span></h3>
+<p>Traditional computational problems take the perspective that we ask a question, a computer (or a distributed system) processes the question for a while, and then produces an answer and stops. However, there are also problems where we do not want the system to ever stop. Examples of such problems include the <a href="/wiki/Dining_philosophers_problem" title="Dining philosophers problem">dining philosophers problem</a> and other similar <a href="/wiki/Mutual_exclusion" title="Mutual exclusion">mutual exclusion</a> problems. In these problems, the distributed system is supposed to continuously coordinate the use of shared resources so that no conflicts or <a href="/wiki/Deadlock" title="Deadlock">deadlocks</a> occur.</p>
+<p>There are also fundamental challenges that are unique to distributed computing. The first example is challenges that are related to <i>fault-tolerance</i>. Examples of related problems include <a href="/wiki/Consensus_(computer_science)" title="Consensus (computer science)">consensus problems</a>,<sup id="cite_ref-33" class="reference"><a href="#cite_note-33"><span>[</span>34<span>]</span></a></sup> <a href="/wiki/Byzantine_fault_tolerance" title="Byzantine fault tolerance">Byzantine fault tolerance</a>,<sup id="cite_ref-34" class="reference"><a href="#cite_note-34"><span>[</span>35<span>]</span></a></sup> and <a href="/wiki/Self-stabilisation" title="Self-stabilisation" class="mw-redirect">self-stabilisation</a>.<sup id="cite_ref-35" class="reference"><a href="#cite_note-35"><span>[</span>36<span>]</span></a></sup></p>
+<p>A lot of research is also focused on understanding the <i>asynchronous</i> nature of distributed systems:</p>
+<ul>
+<li><a href="/wiki/Synchronizer_(algorithm)" title="Synchronizer (algorithm)">Synchronizers</a> can be used to run synchronous algorithms in asynchronous systems.<sup id="cite_ref-36" class="reference"><a href="#cite_note-36"><span>[</span>37<span>]</span></a></sup></li>
+<li><a href="/wiki/Logical_clock" title="Logical clock">Logical clocks</a> provide a causal <a href="/wiki/Happened-before" title="Happened-before">happened-before</a> ordering of events.<sup id="cite_ref-37" class="reference"><a href="#cite_note-37"><span>[</span>38<span>]</span></a></sup></li>
+<li><a href="/wiki/Clock_synchronization" title="Clock synchronization">Clock synchronization</a> algorithms provide globally consistent physical time stamps.<sup id="cite_ref-38" class="reference"><a href="#cite_note-38"><span>[</span>39<span>]</span></a></sup></li>
+</ul>
+<h3><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=10" title="Edit section: Properties of distributed systems">edit</a>]</span> <span class="mw-headline" id="Properties_of_distributed_systems">Properties of distributed systems</span></h3>
+<p>So far the focus has been on <i>designing</i> a distributed system that solves a given problem. A complementary research problem is <i>studying</i> the properties of a given distributed system.</p>
+<p>The <a href="/wiki/Halting_problem" title="Halting problem">halting problem</a> is an analogous example from the field of centralised computation: we are given a computer program and the task is to decide whether it halts or runs forever. The halting problem is <a href="/wiki/Undecidable_problem" title="Undecidable problem">undecidable</a> in the general case, and naturally understanding the behaviour of a computer network is at least as hard as understanding the behaviour of one computer.</p>
+<p>However, there are many interesting special cases that are decidable. In particular, it is possible to reason about the behaviour of a network of finite-state machines. One example is telling whether a given network of interacting (asynchronous and non-deterministic) finite-state machines can reach a deadlock. This problem is <a href="/wiki/PSPACE-complete" title="PSPACE-complete">PSPACE-complete</a>,<sup id="cite_ref-39" class="reference"><a href="#cite_note-39"><span>[</span>40<span>]</span></a></sup> i.e., it is decidable, but it is not likely that there is an efficient (centralised, parallel or distributed) algorithm that solves the problem in the case of large networks.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=11" title="Edit section: Architectures">edit</a>]</span> <span class="mw-headline" id="Architectures">Architectures</span></h2>
+<p>Various hardware and software architectures are used for distributed computing. At a lower level, it is necessary to interconnect multiple CPUs with some sort of network, regardless of whether that network is printed onto a circuit board or made up of loosely-coupled devices and cables. At a higher level, it is necessary to interconnect <a href="/wiki/Process_(computing)" title="Process (computing)">processes</a> running on those CPUs with some sort of <a href="/wiki/Communication_system" title="Communication system" class="mw-redirect">communication system</a>.</p>
+<p>Distributed programming typically falls into one of several basic architectures or categories: <a href="/wiki/Client%E2%80%93server" title="Client–server" class="mw-redirect">client–server</a>, <a href="/wiki/Three-tier_(computing)" title="Three-tier (computing)" class="mw-redirect">3-tier architecture</a>, <a href="/wiki/Multitier_architecture" title="Multitier architecture"><i>n</i>-tier architecture</a>, <a href="/wiki/Distributed_object" title="Distributed object">distributed objects</a>, <a href="/wiki/Loose_coupling" title="Loose coupling">loose coupling</a>, or <a href="/wiki/Computer_cluster" title="Computer cluster">tight coupling</a>.</p>
+<ul>
+<li><a href="/wiki/Client%E2%80%93server" title="Client–server" class="mw-redirect">Client–server</a>: Smart client code contacts the server for data then formats and displays it to the user. Input at the client is committed back to the server when it represents a permanent change.</li>
+<li><a href="/wiki/Three-tier_(computing)" title="Three-tier (computing)" class="mw-redirect">3-tier architecture</a>: Three tier systems move the client intelligence to a middle tier so that stateless clients can be used. This simplifies application deployment. Most web applications are 3-Tier.</li>
+<li><a href="/wiki/Multitier_architecture" title="Multitier architecture"><i>n</i>-tier architecture</a>: <i>n</i>-tier refers typically to web applications which further forward their requests to other enterprise services. This type of application is the one most responsible for the success of <a href="/wiki/Application_server" title="Application server">application servers</a>.</li>
+<li><a href="/wiki/Computer_cluster" title="Computer cluster">Tightly coupled</a> (clustered): refers typically to a cluster of machines that closely work together, running a shared process in parallel. The task is subdivided in parts that are made individually by each one and then put back together to make the final result.</li>
+<li><a href="/wiki/Peer-to-peer" title="Peer-to-peer">Peer-to-peer</a>: an architecture where there is no special machine or machines that provide a service or manage the network resources. Instead all responsibilities are uniformly divided among all machines, known as peers. Peers can serve both as clients and servers.</li>
+<li><a href="/wiki/Space_based_architecture" title="Space based architecture" class="mw-redirect">Space based</a>: refers to an infrastructure that creates the illusion (virtualization) of one single address-space. Data are transparently replicated according to application needs. Decoupling in time, space and reference is achieved.</li>
+</ul>
+<p>Another basic aspect of distributed computing architecture is the method of communicating and coordinating work among concurrent processes. Through various message passing protocols, processes may communicate directly with one another, typically in a <a href="/wiki/Master-slave_(technology)" title="Master-slave (technology)" class="mw-redirect">master/slave</a> relationship. Alternatively, a <a href="/wiki/Database-centric_architecture" title="Database-centric architecture">"database-centric" architecture</a> can enable distributed computing to be done without any form of direct <a href="/wiki/Inter-process_communication" title="Inter-process communication">inter-process communication</a>, by utilizing a shared <a href="/wiki/Database" title="Database">database</a>.<sup id="cite_ref-40" class="reference"><a href="#cite_note-40"><span>[</span>41<span>]</span></a></sup></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=12" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="/wiki/BOINC" title="BOINC" class="mw-redirect">BOINC</a></li>
+<li><a href="/wiki/Grid_computing" title="Grid computing">Grid computing</a></li>
+<li><a href="/wiki/Distributed_operating_system" title="Distributed operating system">Distributed operating system</a></li>
+<li><a href="/wiki/Jungle_computing" title="Jungle computing">Jungle computing</a></li>
+<li><a href="/wiki/List_of_important_publications_in_concurrent,_parallel,_and_distributed_computing" title="List of important publications in concurrent, parallel, and distributed computing">List of important publications in concurrent, parallel, and distributed computing</a></li>
+<li><a href="/wiki/Edsger_W._Dijkstra_Prize_in_Distributed_Computing" title="Edsger W. Dijkstra Prize in Distributed Computing" class="mw-redirect">Edsger W. Dijkstra Prize in Distributed Computing</a></li>
+<li><a href="/wiki/Library_Oriented_Architecture" title="Library Oriented Architecture">Library Oriented Architecture - LOA</a></li>
+<li><a href="/wiki/List_of_distributed_computing_conferences" title="List of distributed computing conferences">List of distributed computing conferences</a></li>
+<li><a href="/wiki/List_of_distributed_computing_projects" title="List of distributed computing projects">List of distributed computing projects</a></li>
+<li><a href="/wiki/Layered_queueing_network" title="Layered queueing network">Layered queueing network</a></li>
+<li><a href="/wiki/Parallel_distributed_processing" title="Parallel distributed processing" class="mw-redirect">Parallel distributed processing</a></li>
+<li><a href="/wiki/Parallel_programming_model" title="Parallel programming model">Parallel programming model</a></li>
+<li><a href="/wiki/Service-oriented_architecture" title="Service-oriented architecture">Service-Oriented Architecture - SOA</a></li>
+<li><a href="/wiki/Volunteer_computing" title="Volunteer computing">Volunteer computing</a></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=13" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h2>
+<div class="reflist references-column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-0"><span class="mw-cite-backlink"><b><a href="#cite_ref-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFAndrews2000">Andrews (2000</a>). <a href="#CITEREFDolev2000">Dolev (2000</a>). <a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 10.</span></li>
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><a href="#CITEREFGodfrey2002">Godfrey (2002</a>).</span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><a href="#CITEREFAndrews2000">Andrews (2000</a>), p. 291–292. <a href="#CITEREFDolev2000">Dolev (2000</a>), p. 5.</span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><a href="#CITEREFLynch1996">Lynch (1996</a>), p. 1.</span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><a href="#CITEREFAndrews2000">Andrews (2000</a>), p. 291–292. <a href="#CITEREFDolev2000">Dolev (2000</a>), p. 5.</span></li>
+<li id="cite_note-harvtxt.7CGhosh.7C2007-5"><span class="mw-cite-backlink">^ <a href="#cite_ref-harvtxt.7CGhosh.7C2007_5-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-harvtxt.7CGhosh.7C2007_5-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 10.</span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><a href="#CITEREFAndrews2000">Andrews (2000</a>), p. 8–9, 291. <a href="#CITEREFDolev2000">Dolev (2000</a>), p. 5. <a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 3. <a href="#CITEREFLynch1996">Lynch (1996</a>), p. xix, 1. <a href="#CITEREFPeleg2000">Peleg (2000</a>), p. xv.</span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><a href="#CITEREFAndrews2000">Andrews (2000</a>), p. 291. <a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 3. <a href="#CITEREFPeleg2000">Peleg (2000</a>), p. 4.</span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 3–4. <a href="#CITEREFPeleg2000">Peleg (2000</a>), p. 1.</span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 4. <a href="#CITEREFPeleg2000">Peleg (2000</a>), p. 2.</span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text"><a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 4, 8. <a href="#CITEREFLynch1996">Lynch (1996</a>), p. 2–3. <a href="#CITEREFPeleg2000">Peleg (2000</a>), p. 4.</span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text"><a href="#CITEREFLynch1996">Lynch (1996</a>), p. 2. <a href="#CITEREFPeleg2000">Peleg (2000</a>), p. 1.</span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12">^</a></b></span> <span class="reference-text"><a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 7. <a href="#CITEREFLynch1996">Lynch (1996</a>), p. xix, 2. <a href="#CITEREFPeleg2000">Peleg (2000</a>), p. 4.</span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 10. <a href="#CITEREFKeidar2008">Keidar (2008</a>).</span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text"><a href="#CITEREFLynch1996">Lynch (1996</a>), p. xix, 1–2. <a href="#CITEREFPeleg2000">Peleg (2000</a>), p. 1.</span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text"><a href="#CITEREFPeleg2000">Peleg (2000</a>), p. 1.</span></li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16">^</a></b></span> <span class="reference-text"><a href="#CITEREFPapadimitriou1994">Papadimitriou (1994</a>), Chapter 15. <a href="#CITEREFKeidar2008">Keidar (2008</a>).</span></li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text">See references in <a href="#Introduction">Introduction</a>.</span></li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18">^</a></b></span> <span class="reference-text"><a href="#CITEREFAndrews2000">Andrews (2000</a>), p. 348.</span></li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text"><a href="#CITEREFAndrews2000">Andrews (2000</a>), p. 32.</span></li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><b><a href="#cite_ref-20">^</a></b></span> <span class="reference-text"><a href="#CITEREFPeter2004">Peter (2004</a>), <a rel="nofollow" class="external text" href="http://www.nethistory.info/History%20of%20the%20Internet/email.html">The history of email</a>.</span></li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><b><a href="#cite_ref-21">^</a></b></span> <span class="reference-text"><a href="#CITEREFElmasriNavathe2000">Elmasri &amp; Navathe (2000</a>), Section 24.1.2.</span></li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><b><a href="#cite_ref-22">^</a></b></span> <span class="reference-text"><a href="#CITEREFAndrews2000">Andrews (2000</a>), p. 10–11. <a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 4–6. <a href="#CITEREFLynch1996">Lynch (1996</a>), p. xix, 1. <a href="#CITEREFPeleg2000">Peleg (2000</a>), p. xv. <a href="#CITEREFElmasriNavathe2000">Elmasri &amp; Navathe (2000</a>), Section 24.</span></li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><b><a href="#cite_ref-23">^</a></b></span> <span class="reference-text"><a href="#CITEREFCormenLeisersonRivest1990">Cormen, Leiserson &amp; Rivest (1990</a>), Section 30.</span></li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><b><a href="#cite_ref-24">^</a></b></span> <span class="reference-text"><a href="#CITEREFHerlihyShavit2008">Herlihy &amp; Shavit (2008</a>), Chapters 2-6.</span></li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><b><a href="#cite_ref-25">^</a></b></span> <span class="reference-text"><a href="#CITEREFLynch1996">Lynch (1996</a>)</span></li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><b><a href="#cite_ref-26">^</a></b></span> <span class="reference-text"><a href="#CITEREFCormenLeisersonRivest1990">Cormen, Leiserson &amp; Rivest (1990</a>), Sections 28 and 29.</span></li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><b><a href="#cite_ref-27">^</a></b></span> <span class="reference-text"><a href="#CITEREFColeVishkin1986">Cole &amp; Vishkin (1986</a>). <a href="#CITEREFCormenLeisersonRivest1990">Cormen, Leiserson &amp; Rivest (1990</a>), Section 30.5.</span></li>
+<li id="cite_note-28"><span class="mw-cite-backlink"><b><a href="#cite_ref-28">^</a></b></span> <span class="reference-text"><a href="#CITEREFAndrews2000">Andrews (2000</a>), p. ix.</span></li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><b><a href="#cite_ref-29">^</a></b></span> <span class="reference-text"><a href="#CITEREFAroraBarak2009">Arora &amp; Barak (2009</a>), Section 6.7. <a href="#CITEREFPapadimitriou1994">Papadimitriou (1994</a>), Section 15.3.</span></li>
+<li id="cite_note-30"><span class="mw-cite-backlink"><b><a href="#cite_ref-30">^</a></b></span> <span class="reference-text"><a href="#CITEREFPapadimitriou1994">Papadimitriou (1994</a>), Section 15.2.</span></li>
+<li id="cite_note-31"><span class="mw-cite-backlink"><b><a href="#cite_ref-31">^</a></b></span> <span class="reference-text"><a href="#CITEREFLynch1996">Lynch (1996</a>), p. 17–23.</span></li>
+<li id="cite_note-32"><span class="mw-cite-backlink"><b><a href="#cite_ref-32">^</a></b></span> <span class="reference-text"><a href="#CITEREFPeleg2000">Peleg (2000</a>), Sections 2.3 and 7. <a href="#CITEREFLinial1992">Linial (1992</a>). <a href="#CITEREFNaorStockmeyer1995">Naor &amp; Stockmeyer (1995</a>).</span></li>
+<li id="cite_note-33"><span class="mw-cite-backlink"><b><a href="#cite_ref-33">^</a></b></span> <span class="reference-text"><a href="#CITEREFLynch1996">Lynch (1996</a>), Sections 5–7. <a href="#CITEREFGhosh2007">Ghosh (2007</a>), Chapter 13.</span></li>
+<li id="cite_note-34"><span class="mw-cite-backlink"><b><a href="#cite_ref-34">^</a></b></span> <span class="reference-text"><a href="#CITEREFLynch1996">Lynch (1996</a>), p. 99–102. <a href="#CITEREFGhosh2007">Ghosh (2007</a>), p. 192–193.</span></li>
+<li id="cite_note-35"><span class="mw-cite-backlink"><b><a href="#cite_ref-35">^</a></b></span> <span class="reference-text"><a href="#CITEREFDolev2000">Dolev (2000</a>). <a href="#CITEREFGhosh2007">Ghosh (2007</a>), Chapter 17.</span></li>
+<li id="cite_note-36"><span class="mw-cite-backlink"><b><a href="#cite_ref-36">^</a></b></span> <span class="reference-text"><a href="#CITEREFLynch1996">Lynch (1996</a>), Section 16. <a href="#CITEREFPeleg2000">Peleg (2000</a>), Section 6.</span></li>
+<li id="cite_note-37"><span class="mw-cite-backlink"><b><a href="#cite_ref-37">^</a></b></span> <span class="reference-text"><a href="#CITEREFLynch1996">Lynch (1996</a>), Section 18. <a href="#CITEREFGhosh2007">Ghosh (2007</a>), Sections 6.2–6.3.</span></li>
+<li id="cite_note-38"><span class="mw-cite-backlink"><b><a href="#cite_ref-38">^</a></b></span> <span class="reference-text"><a href="#CITEREFGhosh2007">Ghosh (2007</a>), Section 6.4.</span></li>
+<li id="cite_note-39"><span class="mw-cite-backlink"><b><a href="#cite_ref-39">^</a></b></span> <span class="reference-text"><a href="#CITEREFPapadimitriou1994">Papadimitriou (1994</a>), Section 19.3.</span></li>
+<li id="cite_note-40"><span class="mw-cite-backlink"><b><a href="#cite_ref-40">^</a></b></span> <span class="reference-text"><span class="citation" id="CITEREFLind_P.2C_Alm_M2006">Lind P, Alm M (2006), "A database-centric virtual chemistry system", <i>J Chem Inf Model</i> <b>46</b> (3): 1034–9, <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1021%2Fci050360b">10.1021/ci050360b</a>, <a href="/wiki/PubMed_Identifier" title="PubMed Identifier" class="mw-redirect">PMID</a>&#160;<a rel="nofollow" class="external text" href="//www.ncbi.nlm.nih.gov/pubmed/16711722">16711722</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=A+database-centric+virtual+chemistry+system&amp;rft.jtitle=J+Chem+Inf+Model&amp;rft.aulast=Lind+P%2C+Alm+M&amp;rft.au=Lind+P%2C+Alm+M&amp;rft.date=2006&amp;rft.volume=46&amp;rft.issue=3&amp;rft.pages=1034%E2%80%939&amp;rft_id=info:doi/10.1021%2Fci050360b&amp;rft_id=info:pmid/16711722&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=14" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<dl>
+<dt>Books</dt>
+</dl>
+<ul>
+<li><span class="citation" id="CITEREFAndrews2000">Andrews, Gregory R. (2000), <i>Foundations of Multithreaded, Parallel, and Distributed Programming</i>, <a href="/wiki/Addison%E2%80%93Wesley" title="Addison–Wesley" class="mw-redirect">Addison–Wesley</a>, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-201-35752-6" title="Special:BookSources/0-201-35752-6">0-201-35752-6</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Foundations+of+Multithreaded%2C+Parallel%2C+and+Distributed+Programming&amp;rft.aulast=Andrews&amp;rft.aufirst=Gregory+R.&amp;rft.au=Andrews%2C%26%2332%3BGregory+R.&amp;rft.date=2000&amp;rft.pub=%5B%5BAddison%E2%80%93Wesley%5D%5D&amp;rft.isbn=0-201-35752-6&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFAroraBarak2009"><a href="/wiki/Sanjeev_Arora" title="Sanjeev Arora">Arora, Sanjeev</a>; Barak, Boaz (2009), <i>Computational Complexity – A Modern Approach</i>, <a href="/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge</a>, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-0-521-42426-4" title="Special:BookSources/978-0-521-42426-4">978-0-521-42426-4</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Computational+Complexity+%E2%80%93+A+Modern+Approach&amp;rft.aulast=Arora&amp;rft.aufirst=Sanjeev&amp;rft.au=Arora%2C%26%2332%3BSanjeev&amp;rft.au=Barak%2C%26%2332%3BBoaz&amp;rft.date=2009&amp;rft.pub=%5B%5BCambridge+University+Press%7CCambridge%5D%5D&amp;rft.isbn=978-0-521-42426-4&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFCormenLeisersonRivest1990"><a href="/wiki/Thomas_H._Cormen" title="Thomas H. Cormen">Cormen, Thomas H.</a>; <a href="/wiki/Charles_E._Leiserson" title="Charles E. Leiserson">Leiserson, Charles E.</a>; <a href="/wiki/Ron_Rivest" title="Ron Rivest">Rivest, Ronald L.</a> (1990), <i><a href="/wiki/Introduction_to_Algorithms" title="Introduction to Algorithms">Introduction to Algorithms</a></i> (1st ed.), <a href="/wiki/MIT_Press" title="MIT Press">MIT Press</a>, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-262-03141-8" title="Special:BookSources/0-262-03141-8">0-262-03141-8</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=%5B%5BIntroduction+to+Algorithms%5D%5D&amp;rft.aulast=Cormen&amp;rft.aufirst=Thomas+H.&amp;rft.au=Cormen%2C%26%2332%3BThomas+H.&amp;rft.au=Leiserson%2C%26%2332%3BCharles+E.&amp;rft.au=Rivest%2C%26%2332%3BRonald+L.&amp;rft.date=1990&amp;rft.edition=1st&amp;rft.pub=%5B%5BMIT+Press%5D%5D&amp;rft.isbn=0-262-03141-8&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFDolev2000"><a href="/wiki/Shlomi_Dolev" title="Shlomi Dolev">Dolev, Shlomi</a> (2000), <i>Self-Stabilization</i>, <a href="/wiki/MIT_Press" title="MIT Press">MIT Press</a>, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-262-04178-2" title="Special:BookSources/0-262-04178-2">0-262-04178-2</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Self-Stabilization&amp;rft.aulast=Dolev&amp;rft.aufirst=Shlomi&amp;rft.au=Dolev%2C%26%2332%3BShlomi&amp;rft.date=2000&amp;rft.pub=%5B%5BMIT+Press%5D%5D&amp;rft.isbn=0-262-04178-2&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFElmasriNavathe2000">Elmasri, Ramez; <a href="/wiki/Shamkant_Navathe" title="Shamkant Navathe">Navathe, Shamkant B.</a> (2000), <i>Fundamentals of Database Systems</i> (3rd ed.), <a href="/wiki/Addison%E2%80%93Wesley" title="Addison–Wesley" class="mw-redirect">Addison–Wesley</a>, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-201-54263-3" title="Special:BookSources/0-201-54263-3">0-201-54263-3</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Fundamentals+of+Database+Systems&amp;rft.aulast=Elmasri&amp;rft.aufirst=Ramez&amp;rft.au=Elmasri%2C%26%2332%3BRamez&amp;rft.au=Navathe%2C%26%2332%3BShamkant+B.&amp;rft.date=2000&amp;rft.edition=3rd&amp;rft.pub=%5B%5BAddison%E2%80%93Wesley%5D%5D&amp;rft.isbn=0-201-54263-3&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFGhosh2007">Ghosh, Sukumar (2007), <i>Distributed Systems – An Algorithmic Approach</i>, Chapman &amp; Hall/CRC, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-1-58488-564-1" title="Special:BookSources/978-1-58488-564-1">978-1-58488-564-1</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Distributed+Systems+%E2%80%93+An+Algorithmic+Approach&amp;rft.aulast=Ghosh&amp;rft.aufirst=Sukumar&amp;rft.au=Ghosh%2C%26%2332%3BSukumar&amp;rft.date=2007&amp;rft.pub=Chapman+%26+Hall%2FCRC&amp;rft.isbn=978-1-58488-564-1&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFLynch1996"><a href="/wiki/Nancy_Lynch" title="Nancy Lynch">Lynch, Nancy A.</a> (1996), <i>Distributed Algorithms</i>, <a href="/wiki/Morgan_Kaufmann_Publishers" title="Morgan Kaufmann Publishers">Morgan Kaufmann</a>, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/1-55860-348-4" title="Special:BookSources/1-55860-348-4">1-55860-348-4</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Distributed+Algorithms&amp;rft.aulast=Lynch&amp;rft.aufirst=Nancy+A.&amp;rft.au=Lynch%2C%26%2332%3BNancy+A.&amp;rft.date=1996&amp;rft.pub=%5B%5BMorgan+Kaufmann+Publishers%7CMorgan+Kaufmann%5D%5D&amp;rft.isbn=1-55860-348-4&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFHerlihyShavit2008"><a href="/wiki/Maurice_Herlihy" title="Maurice Herlihy">Herlihy, Maurice P.</a>; <a href="/wiki/Nir_Shavit" title="Nir Shavit">Shavit, Nir N.</a> (2008), <i>The Art of Multiprocessor Programming</i>, <a href="/wiki/Morgan_Kaufmann_Publishers" title="Morgan Kaufmann Publishers">Morgan Kaufmann</a>, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-12-370591-6" title="Special:BookSources/0-12-370591-6">0-12-370591-6</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+Art+of+Multiprocessor+Programming&amp;rft.aulast=Herlihy&amp;rft.aufirst=Maurice+P.&amp;rft.au=Herlihy%2C%26%2332%3BMaurice+P.&amp;rft.au=Shavit%2C%26%2332%3BNir+N.&amp;rft.date=2008&amp;rft.pub=%5B%5BMorgan+Kaufmann+Publishers%7CMorgan+Kaufmann%5D%5D&amp;rft.isbn=0-12-370591-6&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFPapadimitriou1994"><a href="/wiki/Christos_Papadimitriou" title="Christos Papadimitriou">Papadimitriou, Christos H.</a> (1994), <i>Computational Complexity</i>, <a href="/wiki/Addison%E2%80%93Wesley" title="Addison–Wesley" class="mw-redirect">Addison–Wesley</a>, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-201-53082-1" title="Special:BookSources/0-201-53082-1">0-201-53082-1</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Computational+Complexity&amp;rft.aulast=Papadimitriou&amp;rft.aufirst=Christos+H.&amp;rft.au=Papadimitriou%2C%26%2332%3BChristos+H.&amp;rft.date=1994&amp;rft.pub=%5B%5BAddison%E2%80%93Wesley%5D%5D&amp;rft.isbn=0-201-53082-1&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFPeleg2000"><a href="/wiki/David_Peleg_(scientist)" title="David Peleg (scientist)" class="mw-redirect">Peleg, David</a> (2000), <a rel="nofollow" class="external text" href="http://www.ec-securehost.com/SIAM/DT05.html"><i>Distributed Computing: A Locality-Sensitive Approach</i></a>, <a href="/wiki/Society_for_Industrial_and_Applied_Mathematics" title="Society for Industrial and Applied Mathematics">SIAM</a>, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-89871-464-8" title="Special:BookSources/0-89871-464-8">0-89871-464-8</a><span class="printonly">, <a rel="nofollow" class="external free" href="http://www.ec-securehost.com/SIAM/DT05.html">http://www.ec-securehost.com/SIAM/DT05.html</a></span></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Distributed+Computing%3A+A+Locality-Sensitive+Approach&amp;rft.aulast=Peleg&amp;rft.aufirst=David&amp;rft.au=Peleg%2C%26%2332%3BDavid&amp;rft.date=2000&amp;rft.pub=%5B%5BSociety+for+Industrial+and+Applied+Mathematics%7CSIAM%5D%5D&amp;rft.isbn=0-89871-464-8&amp;rft_id=http%3A%2F%2Fwww.ec-securehost.com%2FSIAM%2FDT05.html&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+</ul>
+<dl>
+<dt>Articles</dt>
+</dl>
+<ul>
+<li><span class="citation" id="CITEREFColeVishkin1986">Cole, Richard; <a href="/wiki/Uzi_Vishkin" title="Uzi Vishkin">Vishkin, Uzi</a> (1986), "Deterministic coin tossing with applications to optimal parallel list ranking", <i>Information and Control</i> <b>70</b> (1): 32–53, <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016%2FS0019-9958%2886%2980023-7">10.1016/S0019-9958(86)80023-7</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Deterministic+coin+tossing+with+applications+to+optimal+parallel+list+ranking&amp;rft.jtitle=Information+and+Control&amp;rft.aulast=Cole&amp;rft.aufirst=Richard&amp;rft.au=Cole%2C%26%2332%3BRichard&amp;rft.au=Vishkin%2C%26%2332%3BUzi&amp;rft.date=1986&amp;rft.volume=70&amp;rft.issue=1&amp;rft.pages=32%E2%80%9353&amp;rft_id=info:doi/10.1016%2FS0019-9958%2886%2980023-7&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFKeidar2008">Keidar, Idit (2008), <a rel="nofollow" class="external text" href="http://webee.technion.ac.il/~idish/sigactNews/#column%2032">"Distributed computing column 32 – The year in review"</a>, <i><a href="/wiki/ACM_SIGACT_News" title="ACM SIGACT News" class="mw-redirect">ACM SIGACT News</a></i> <b>39</b> (4): 53–54, <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F1466390.1466402">10.1145/1466390.1466402</a><span class="printonly">, <a rel="nofollow" class="external free" href="http://webee.technion.ac.il/~idish/sigactNews/#column%2032">http://webee.technion.ac.il/~idish/sigactNews/#column%2032</a></span></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Distributed+computing+column+32+%E2%80%93+The+year+in+review&amp;rft.jtitle=%5B%5BACM+SIGACT+News%5D%5D&amp;rft.aulast=Keidar&amp;rft.aufirst=Idit&amp;rft.au=Keidar%2C%26%2332%3BIdit&amp;rft.date=2008&amp;rft.volume=39&amp;rft.issue=4&amp;rft.pages=53%E2%80%9354&amp;rft_id=info:doi/10.1145%2F1466390.1466402&amp;rft_id=http%3A%2F%2Fwebee.technion.ac.il%2F%7Eidish%2FsigactNews%2F%23column%252032&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFLinial1992"><a href="/wiki/Nati_Linial" title="Nati Linial">Linial, Nathan</a> (1992), "Locality in distributed graph algorithms", <i>SIAM Journal on Computing</i> <b>21</b> (1): 193–201, <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1137%2F0221015">10.1137/0221015</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Locality+in+distributed+graph+algorithms&amp;rft.jtitle=SIAM+Journal+on+Computing&amp;rft.aulast=Linial&amp;rft.aufirst=Nathan&amp;rft.au=Linial%2C%26%2332%3BNathan&amp;rft.date=1992&amp;rft.volume=21&amp;rft.issue=1&amp;rft.pages=193%E2%80%93201&amp;rft_id=info:doi/10.1137%2F0221015&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation" id="CITEREFNaorStockmeyer1995"><a href="/wiki/Moni_Naor" title="Moni Naor">Naor, Moni</a>; <a href="/wiki/Larry_Stockmeyer" title="Larry Stockmeyer">Stockmeyer, Larry</a> (1995), "What can be computed locally?", <i>SIAM Journal on Computing</i> <b>24</b> (6): 1259–1277, <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1137%2FS0097539793254571">10.1137/S0097539793254571</a></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=What+can+be+computed+locally%3F&amp;rft.jtitle=SIAM+Journal+on+Computing&amp;rft.aulast=Naor&amp;rft.aufirst=Moni&amp;rft.au=Naor%2C%26%2332%3BMoni&amp;rft.au=Stockmeyer%2C%26%2332%3BLarry&amp;rft.date=1995&amp;rft.volume=24&amp;rft.issue=6&amp;rft.pages=1259%E2%80%931277&amp;rft_id=info:doi/10.1137%2FS0097539793254571&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+</ul>
+<dl>
+<dt>Web sites</dt>
+</dl>
+<ul>
+<li><span class="citation web">Godfrey, Bill (2002). <a rel="nofollow" class="external text" href="http://www.bacchae.co.uk/docs/dist.html">"A primer on distributed computing"</a><span class="printonly">. <a rel="nofollow" class="external free" href="http://www.bacchae.co.uk/docs/dist.html">http://www.bacchae.co.uk/docs/dist.html</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=A+primer+on+distributed+computing&amp;rft.atitle=&amp;rft.aulast=Godfrey&amp;rft.aufirst=Bill&amp;rft.au=Godfrey%2C%26%2332%3BBill&amp;rft.date=2002&amp;rft_id=http%3A%2F%2Fwww.bacchae.co.uk%2Fdocs%2Fdist.html&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span></li>
+<li><span class="citation web">Peter, Ian (2004). <a rel="nofollow" class="external text" href="http://www.nethistory.info/History%20of%20the%20Internet/">"Ian Peter's History of the Internet"</a><span class="printonly">. <a rel="nofollow" class="external free" href="http://www.nethistory.info/History%20of%20the%20Internet/">http://www.nethistory.info/History%20of%20the%20Internet/</a></span><span class="reference-accessdate">. Retrieved 2009-08-04</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Ian+Peter%27s+History+of+the+Internet&amp;rft.atitle=&amp;rft.aulast=Peter&amp;rft.aufirst=Ian&amp;rft.au=Peter%2C%26%2332%3BIan&amp;rft.date=2004&amp;rft_id=http%3A%2F%2Fwww.nethistory.info%2FHistory%2520of%2520the%2520Internet%2F&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=15" title="Edit section: Further reading">edit</a>]</span> <span class="mw-headline" id="Further_reading">Further reading</span></h2>
+<dl>
+<dt>Books</dt>
+</dl>
+<ul>
+<li><span class="citation" id="CITEREFAttiya.2C_Hagit_and_Welch.2C_Jennifer2004">Attiya, Hagit and Welch, Jennifer (2004), <i>Distributed Computing: Fundamentals, Simulations, and Advanced Topics</i>, Wiley-Interscience</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Distributed+Computing%3A+Fundamentals%2C+Simulations%2C+and+Advanced+Topics&amp;rft.aulast=Attiya%2C+Hagit+and+Welch%2C+Jennifer&amp;rft.au=Attiya%2C+Hagit+and+Welch%2C+Jennifer&amp;rft.date=2004&amp;rft.pub=Wiley-Interscience&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span> <a href="/wiki/Special:BookSources/0471453242" class="internal mw-magiclink-isbn">ISBN 0471453242</a>.</li>
+<li><span class="citation" id="CITEREFFaber1998">Faber, Jim (1998), <a rel="nofollow" class="external text" href="http://docstore.mik.ua/orelly/java-ent/dist/index.htm"><i>Java Distributed Computing</i></a>, O'Reilly<span class="printonly">, <a rel="nofollow" class="external free" href="http://docstore.mik.ua/orelly/java-ent/dist/index.htm">http://docstore.mik.ua/orelly/java-ent/dist/index.htm</a></span></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Java+Distributed+Computing&amp;rft.aulast=Faber&amp;rft.aufirst=Jim&amp;rft.au=Faber%2C%26%2332%3BJim&amp;rft.date=1998&amp;rft.pub=O%27Reilly&amp;rft_id=http%3A%2F%2Fdocstore.mik.ua%2Forelly%2Fjava-ent%2Fdist%2Findex.htm&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>: <a rel="nofollow" class="external text" href="http://docstore.mik.ua/orelly/java-ent/dist/index.htm">Java Distributed Computing by Jim Faber, 1998</a></li>
+<li><span class="citation" id="CITEREFGarg.2C_Vijay_K.2002">Garg, Vijay K. (2002), <i>Elements of Distributed Computing</i>, Wiley-IEEE Press</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Elements+of+Distributed+Computing&amp;rft.aulast=Garg%2C+Vijay+K.&amp;rft.au=Garg%2C+Vijay+K.&amp;rft.date=2002&amp;rft.pub=Wiley-IEEE+Press&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span> <a href="/wiki/Special:BookSources/0471036005" class="internal mw-magiclink-isbn">ISBN 0471036005</a>.</li>
+<li><span class="citation" id="CITEREFTel1994">Tel, Gerard (1994), <i>Introduction to Distributed Algorithms</i>, Cambridge University Press</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+Distributed+Algorithms&amp;rft.aulast=Tel&amp;rft.aufirst=Gerard&amp;rft.au=Tel%2C%26%2332%3BGerard&amp;rft.date=1994&amp;rft.pub=Cambridge+University+Press&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span></li>
+<li><span class="citation" id="CITEREFChandy.2C_Mani_et_al">Chandy, Mani et al, <i>Parallel Program Design</i></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Parallel+Program+Design&amp;rft.aulast=Chandy%2C+Mani+et+al&amp;rft.au=Chandy%2C+Mani+et+al&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span></li>
+<li><span class="citation Journal">Cachin, C.; Guerraoui, R.; Rodrigues, L. S. (2011). <i>Introduction to Reliable and Secure Distributed Programming</i>. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1007%2F978-3-642-15260-3">10.1007/978-3-642-15260-3</a>. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-3-642-15259-7" title="Special:BookSources/978-3-642-15259-7">978-3-642-15259-7</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+Reliable+and+Secure+Distributed+Programming&amp;rft.aulast=Cachin&amp;rft.aufirst=C.&amp;rft.au=Cachin%2C%26%2332%3BC.&amp;rft.au=Guerraoui%2C%26%2332%3BR.&amp;rft.au=Rodrigues%2C%26%2332%3BL.+S.&amp;rft.date=2011&amp;rft_id=info:doi/10.1007%2F978-3-642-15260-3&amp;rft.isbn=978-3-642-15259-7&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span> <span class="plainlinks noprint" style="font-size:smaller"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Cite_doi/10.1007.2F978-3-642-15260-3&amp;action=edit&amp;editintro=Template:Cite_doi/editintro2">edit</a></span></li>
+</ul>
+<dl>
+<dt>Articles</dt>
+</dl>
+<ul>
+<li><span class="citation" id="CITEREFKeidarRajsbaum2000.E2.80.932009">Keidar, Idit; Rajsbaum, Sergio, eds. (2000–2009), <a rel="nofollow" class="external text" href="http://webee.technion.ac.il/~idish/sigactNews/">"Distributed computing column"</a>, <i><a href="/wiki/ACM_SIGACT_News" title="ACM SIGACT News" class="mw-redirect">ACM SIGACT News</a></i><span class="printonly">, <a rel="nofollow" class="external free" href="http://webee.technion.ac.il/~idish/sigactNews/">http://webee.technion.ac.il/~idish/sigactNews/</a></span></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Distributed+computing+column&amp;rft.atitle=%5B%5BACM+SIGACT+News%5D%5D&amp;rft.date=2000%E2%80%932009&amp;rft_id=http%3A%2F%2Fwebee.technion.ac.il%2F%7Eidish%2FsigactNews%2F&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span>.</li>
+<li><span class="citation Journal">Birrell, A. D.; Levin, R.; Schroeder, M. D.; <a href="/wiki/Roger_M._Needham" title="Roger M. Needham" class="mw-redirect">Needham, R. M.</a> (April 1982). <a rel="nofollow" class="external text" href="http://www.cs.ucsb.edu/~ravenben/papers/coreos/BLS+82.pdf">"Grapevine: An exercise in distributed computing"</a>. <i><a href="/wiki/Communications_of_the_ACM" title="Communications of the ACM">Communications of the ACM</a></i> <b>25</b> (4): 260–274. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F358468.358487">10.1145/358468.358487</a><span class="printonly">. <a rel="nofollow" class="external free" href="http://www.cs.ucsb.edu/~ravenben/papers/coreos/BLS+82.pdf">http://www.cs.ucsb.edu/~ravenben/papers/coreos/BLS+82.pdf</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Grapevine%3A+An+exercise+in+distributed+computing&amp;rft.jtitle=%5B%5BCommunications+of+the+ACM%5D%5D&amp;rft.aulast=Birrell&amp;rft.aufirst=A.+D.&amp;rft.au=Birrell%2C%26%2332%3BA.+D.&amp;rft.au=Levin%2C%26%2332%3BR.&amp;rft.au=Schroeder%2C%26%2332%3BM.+D.&amp;rft.au=Needham%2C%26%2332%3BR.+M.&amp;rft.date=April+1982&amp;rft.volume=25&amp;rft.issue=4&amp;rft.pages=260%E2%80%93274&amp;rft_id=info:doi/10.1145%2F358468.358487&amp;rft_id=http%3A%2F%2Fwww.cs.ucsb.edu%2F%7Eravenben%2Fpapers%2Fcoreos%2FBLS%2B82.pdf&amp;rfr_id=info:sid/en.wikipedia.org:Distributed_computing"><span style="display: none;">&#160;</span></span> <span class="plainlinks noprint" style="font-size:smaller"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Cite_doi/10.1145.2F358468.358487&amp;action=edit&amp;editintro=Template:Cite_doi/editintro2">edit</a></span></li>
+</ul>
+<dl>
+<dt>Conference Papers</dt>
+</dl>
+<ul>
+<li>C. Rodríguez, M. Villagra and B. Barán, <a rel="nofollow" class="external text" href="http://dx.doi.org/10.1109/BIMNICS.2007.4610083">Asynchronous team algorithms for Boolean Satisfiability</a>, Bionetics2007, pp.&#160;66–69, 2007.</li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Distributed_computing&amp;action=edit&amp;section=16" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.dmoz.org/Computers/Computer_Science/Distributed_Computing//">Distributed computing</a> at the <a href="/wiki/Open_Directory_Project" title="Open Directory Project">Open Directory Project</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.dmoz.org/Computers/Computer_Science/Distributed_Computing/Publications//">Distributed computing journals</a> at the <a href="/wiki/Open_Directory_Project" title="Open Directory Project">Open Directory Project</a></li>
+</ul>
+<table cellspacing="0" class="navbox" style="border-spacing:0;;">
+<tr>
+<td style="padding:2px;">
+<table cellspacing="0" class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit;;">
+<tr>
+<th scope="col" style=";" class="navbox-title" colspan="3">
+<div class="noprint plainlinks hlist navbar mini" style="">
+<ul>
+<li class="nv-view"><a href="/wiki/Template:Parallel_computing" title="Template:Parallel computing"><span title="View this template" style=";;background:none transparent;border:none;">v</span></a></li>
+<li class="nv-talk"><a href="/wiki/Template_talk:Parallel_computing" title="Template talk:Parallel computing"><span title="Discuss this template" style=";;background:none transparent;border:none;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Parallel_computing&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;">e</span></a></li>
+</ul>
+</div>
+<div class="" style="font-size:110%;"><a href="/wiki/Parallel_computing" title="Parallel computing">Parallel computing</a></div>
+</th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;">General</th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Cloud_computing" title="Cloud computing">Cloud computing</a></li>
+<li><a href="/wiki/High-performance_computing" title="High-performance computing" class="mw-redirect">High-performance computing</a></li>
+<li><a href="/wiki/Computer_cluster" title="Computer cluster">Cluster computing</a></li>
+<li><strong class="selflink">Distributed computing</strong></li>
+<li><a href="/wiki/Grid_computing" title="Grid computing">Grid computing</a></li>
+</ul>
+</div>
+</td>
+<td class="navbox-image" style="width:0%;padding:0px 0px 0px 2px;" rowspan="19">
+<div><a href="/wiki/File:AmdahlsLaw.svg" class="image"><img alt="AmdahlsLaw.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/ea/AmdahlsLaw.svg/200px-AmdahlsLaw.svg.png" width="200" height="150" /></a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;">Levels</th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Bit-level_parallelism" title="Bit-level parallelism">Bit</a></li>
+<li><a href="/wiki/Instruction-level_parallelism" title="Instruction-level parallelism">Instruction</a></li>
+<li><a href="/wiki/Data_parallelism" title="Data parallelism">Data</a></li>
+<li><a href="/wiki/Task_parallelism" title="Task parallelism">Task</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;"><a href="/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">Threads</a></th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Super-threading" title="Super-threading">Superthreading</a></li>
+<li><a href="/wiki/Hyper-threading" title="Hyper-threading">Hyperthreading</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;">Theory</th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Amdahl%27s_law" title="Amdahl's law">Amdahl's law</a></li>
+<li><a href="/wiki/Gustafson%27s_law" title="Gustafson's law">Gustafson's law</a></li>
+<li><a href="/wiki/Cost_efficiency" title="Cost efficiency">Cost efficiency</a></li>
+<li><a href="/wiki/Karp%E2%80%93Flatt_metric" title="Karp–Flatt metric">Karp–Flatt metric</a></li>
+<li><a href="/wiki/Parallel_slowdown" title="Parallel slowdown">slowdown</a></li>
+<li><a href="/wiki/Speedup" title="Speedup">speedup</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;">Elements</th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Process_(computing)" title="Process (computing)">Process</a></li>
+<li><a href="/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">Thread</a></li>
+<li><a href="/wiki/Fiber_(computer_science)" title="Fiber (computer science)">Fiber</a></li>
+<li><a href="/wiki/Parallel_Random_Access_Machine" title="Parallel Random Access Machine">PRAM</a></li>
+<li><a href="/wiki/Instruction_window" title="Instruction window">Instruction window</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;">Coordination</th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Multiprocessing" title="Multiprocessing">Multiprocessing</a></li>
+<li><a href="/wiki/Multithreading_(computer_architecture)" title="Multithreading (computer architecture)">Multithreading (computer architecture)</a></li>
+<li><a href="/wiki/Memory_coherence" title="Memory coherence">Memory coherency</a></li>
+<li><a href="/wiki/Cache_coherence" title="Cache coherence">Cache coherency</a></li>
+<li><a href="/wiki/Cache_invalidation" title="Cache invalidation">Cache invalidation</a></li>
+<li><a href="/wiki/Barrier_(computer_science)" title="Barrier (computer science)">Barrier</a></li>
+<li><a href="/wiki/Synchronization_(computer_science)" title="Synchronization (computer science)">Synchronization</a></li>
+<li><a href="/wiki/Application_checkpointing" title="Application checkpointing">Application checkpointing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;"><a href="/wiki/Computer_programming" title="Computer programming">Programming</a></th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Parallel_programming_model" title="Parallel programming model">Models</a>
+<ul>
+<li><a href="/wiki/Implicit_parallelism" title="Implicit parallelism">Implicit parallelism</a></li>
+<li><a href="/wiki/Explicit_parallelism" title="Explicit parallelism">Explicit parallelism</a></li>
+<li><a href="/wiki/Concurrency_(computer_science)" title="Concurrency (computer science)">Concurrency</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Flynn%27s_taxonomy" title="Flynn's taxonomy">Flynn's taxonomy</a>
+<ul>
+<li><a href="/wiki/SISD" title="SISD">SISD</a></li>
+<li><a href="/wiki/SIMD" title="SIMD">SIMD</a></li>
+<li><a href="/wiki/MISD" title="MISD">MISD</a></li>
+<li><a href="/wiki/MIMD" title="MIMD">MIMD</a>
+<ul>
+<li><a href="/wiki/SPMD" title="SPMD">SPMD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">Thread (computer science)</a></li>
+<li><a href="/wiki/Non-blocking_algorithm" title="Non-blocking algorithm">Non-blocking algorithm</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;"><a href="/wiki/Computer_hardware" title="Computer hardware">Hardware</a></th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Multiprocessor" title="Multiprocessor">Multiprocessor</a>
+<ul>
+<li><a href="/wiki/Symmetric_multiprocessor" title="Symmetric multiprocessor" class="mw-redirect">Symmetric</a></li>
+<li><a href="/wiki/Asymmetric_multiprocessing" title="Asymmetric multiprocessing">Asymmetric</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Semiconductor_memory" title="Semiconductor memory">Memory</a>
+<ul>
+<li><a href="/wiki/Non-Uniform_Memory_Access" title="Non-Uniform Memory Access">NUMA</a></li>
+<li><a href="/wiki/Cache-only_memory_architecture" title="Cache-only memory architecture">COMA</a></li>
+<li><a href="/wiki/Distributed_memory" title="Distributed memory">distributed</a></li>
+<li><a href="/wiki/Shared_memory" title="Shared memory">shared</a></li>
+<li><a href="/wiki/Distributed_shared_memory" title="Distributed shared memory">distributed shared</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Simultaneous_multithreading" title="Simultaneous multithreading">SMT</a></li>
+<li><a href="/wiki/Massive_parallel_processing" title="Massive parallel processing" class="mw-redirect">MPP</a></li>
+<li><a href="/wiki/Superscalar" title="Superscalar">Superscalar</a></li>
+<li><a href="/wiki/Vector_processor" title="Vector processor">Vector processor</a></li>
+<li><a href="/wiki/Supercomputer" title="Supercomputer">Supercomputer</a></li>
+<li><a href="/wiki/Beowulf_(computing)" title="Beowulf (computing)" class="mw-redirect"><i>Beowulf</i></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;"><a href="/wiki/Application_programming_interface" title="Application programming interface">APIs</a></th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Ateji_PX" title="Ateji PX">Ateji PX</a></li>
+<li><a href="/wiki/POSIX_Threads" title="POSIX Threads">POSIX Threads</a></li>
+<li><a href="/wiki/OpenMP" title="OpenMP">OpenMP</a></li>
+<li><a href="/wiki/OpenHMPP" title="OpenHMPP">OpenHMPP</a></li>
+<li><a href="/wiki/Parallel_Virtual_Machine" title="Parallel Virtual Machine">PVM</a></li>
+<li><a href="/wiki/Message_Passing_Interface" title="Message Passing Interface">MPI</a></li>
+<li><a href="/wiki/Unified_Parallel_C" title="Unified Parallel C">UPC</a></li>
+<li><a href="/wiki/Intel_Threading_Building_Blocks" title="Intel Threading Building Blocks">Intel Threading Building Blocks</a></li>
+<li><a href="/wiki/Boost_C%2B%2B_Libraries#Multithreading_.E2.80.93_Boost.Thread" title="Boost C++ Libraries" class="mw-redirect">Boost.Thread</a></li>
+<li><a href="/wiki/Global_Arrays" title="Global Arrays">Global Arrays</a></li>
+<li><a href="/wiki/Charm%2B%2B" title="Charm++">Charm++</a></li>
+<li><a href="/wiki/Cilk" title="Cilk">Cilk</a></li>
+<li><a href="/wiki/Co-array_Fortran" title="Co-array Fortran">Co-array Fortran</a></li>
+<li><a href="/wiki/OpenCL" title="OpenCL">OpenCL</a></li>
+<li><a href="/wiki/CUDA" title="CUDA">CUDA</a></li>
+<li><a href="/wiki/Dryad_(programming)" title="Dryad (programming)">Dryad</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style=";;">Problems</th>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Embarrassingly_parallel" title="Embarrassingly parallel">Embarrassingly parallel</a></li>
+<li><a href="/wiki/Grand_Challenge_problem" title="Grand Challenge problem" class="mw-redirect">Grand Challenge</a></li>
+<li><a href="/wiki/Software_lockout" title="Software lockout">Software lockout</a></li>
+<li><a href="/wiki/Scalability" title="Scalability">Scalability</a></li>
+<li><a href="/wiki/Race_conditions" title="Race conditions" class="mw-redirect">Race conditions</a></li>
+<li><a href="/wiki/Deadlock" title="Deadlock">Deadlock</a></li>
+<li><a href="/wiki/Deadlock#Livelock" title="Deadlock">Livelock</a></li>
+<li><a href="/wiki/Deterministic_algorithm" title="Deterministic algorithm">Deterministic algorithm</a></li>
+<li><a href="/wiki/Parallel_slowdown" title="Parallel slowdown">Parallel slowdown</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" style=";" colspan="3">
+<div>
+<ul>
+<li><img alt="Category" src="//upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/16px-Folder_Hexagonal_Icon.svg.png" width="16" height="14" /> <b><a href="/wiki/Category:Parallel_computing" title="Category:Parallel computing">Category</a></b></li>
+<li><img alt="" src="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png" width="12" height="16" /> <a href="//commons.wikimedia.org/wiki/Category:Parallel_computing" class="extiw" title="commons:Category:Parallel computing"><b>Commons</b></a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 26033/1000000
+Post-expand include size: 170950/2048000 bytes
+Template argument size: 38074/2048000 bytes
+Expensive parser function count: 2/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:8501-0!*!0!!en!4!* and timestamp 20120507053422 -->
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				Retrieved from "<a href="http://en.wikipedia.org/w/index.php?title=Distributed_computing&amp;oldid=491129441">http://en.wikipedia.org/w/index.php?title=Distributed_computing&amp;oldid=491129441</a>"				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/wiki/Category:Distributed_computing" title="Category:Distributed computing">Distributed computing</a></li></ul></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+		<li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Distributed+computing" title="You are encouraged to log in; however, it is not mandatory. [o]" accesskey="o">Log in / create account</a></li>
+	</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Distributed_computing"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+					<li  id="ca-talk"><span><a href="/wiki/Talk:Distributed_computing"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+	<h4>
+		</h4>
+	<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="/wiki/Distributed_computing" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="/w/index.php?title=Distributed_computing&amp;action=edit"  title="You can edit this page. &#10;Please use the preview button before saving. [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Distributed_computing&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input type="text" name="search" value="" title="Search Wikipedia [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search Wikipedia for this text" id="searchButton" width="12" height="13"><img src="//bits.wikimedia.org/static-1.20wmf2/skins/vector/images/search-ltr.png?303-4" alt="Search" /></button>								<input type='hidden' name="title" value="Special:Search"/>
+		</div>
+	</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(//upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+			<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+			<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+			<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+			<li id="n-sitesupport"><a href="//wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Support us">Donate to Wikipedia</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- interaction -->
+<div class="portal" id='p-interaction'>
+	<h5>Interaction</h5>
+	<div class="body">
+		<ul>
+			<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+			<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+			<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+			<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /interaction -->
+
+<!-- TOOLBOX -->
+<div class="portal" id='p-tb'>
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Distributed_computing" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Distributed_computing" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+			<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="/w/index.php?title=Distributed_computing&amp;oldid=491129441" title="Permanent link to this revision of the page">Permanent link</a></li>
+<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Distributed_computing&amp;id=491129441" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- coll-print_export -->
+<div class="portal" id='p-coll-print_export'>
+	<h5>Print/export</h5>
+	<div class="body">
+		<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Distributed+computing" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Distributed+computing&amp;oldid=491129441&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Distributed_computing&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>	</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- LANGUAGES -->
+<div class="portal" id='p-lang'>
+	<h5>Languages</h5>
+	<div class="body">
+		<ul>
+			<li class="interwiki-ar"><a href="//ar.wikipedia.org/wiki/%D8%AD%D9%88%D8%B3%D8%A8%D8%A9_%D9%85%D9%88%D8%B2%D8%B9%D8%A9" title="حوسبة موزعة" lang="ar" hreflang="ar">العربية</a></li>
+			<li class="interwiki-be"><a href="//be.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%D0%BA%D0%B0%D0%B2%D0%B0%D0%BD%D1%8B%D1%8F_%D0%B2%D1%8B%D0%BB%D1%96%D1%87%D1%8D%D0%BD%D0%BD%D1%96" title="Размеркаваныя вылічэнні" lang="be" hreflang="be">Беларуская</a></li>
+			<li class="interwiki-be-x-old"><a href="//be-x-old.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D1%8C%D0%BC%D0%B5%D1%80%D0%BA%D0%B0%D0%B2%D0%B0%D0%BD%D1%8B%D1%8F_%D0%B2%D1%8B%D0%BB%D1%96%D1%87%D1%8D%D0%BD%D1%8C%D0%BD%D1%96" title="Разьмеркаваныя вылічэньні" lang="be-x-old" hreflang="be-x-old">‪Беларуская (тарашкевіца)‬</a></li>
+			<li class="interwiki-bg"><a href="//bg.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8_%D0%B8%D0%B7%D1%87%D0%B8%D1%81%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%B8_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B8" title="Разпределени изчислителни системи" lang="bg" hreflang="bg">Български</a></li>
+			<li class="interwiki-bs"><a href="//bs.wikipedia.org/wiki/Distribuirano_ra%C4%8Dunarstvo" title="Distribuirano računarstvo" lang="bs" hreflang="bs">Bosanski</a></li>
+			<li class="interwiki-ca"><a href="//ca.wikipedia.org/wiki/Computaci%C3%B3_distribu%C3%AFda" title="Computació distribuïda" lang="ca" hreflang="ca">Català</a></li>
+			<li class="interwiki-cs"><a href="//cs.wikipedia.org/wiki/Distribuovan%C3%BD_v%C3%BDpo%C4%8Det" title="Distribuovaný výpočet" lang="cs" hreflang="cs">Česky</a></li>
+			<li class="interwiki-da"><a href="//da.wikipedia.org/wiki/Distribuerede_beregninger" title="Distribuerede beregninger" lang="da" hreflang="da">Dansk</a></li>
+			<li class="interwiki-de"><a href="//de.wikipedia.org/wiki/Verteiltes_Rechnen" title="Verteiltes Rechnen" lang="de" hreflang="de">Deutsch</a></li>
+			<li class="interwiki-et"><a href="//et.wikipedia.org/wiki/Hajusarvutus" title="Hajusarvutus" lang="et" hreflang="et">Eesti</a></li>
+			<li class="interwiki-el"><a href="//el.wikipedia.org/wiki/%CE%A0%CE%B1%CF%81%CE%AC%CE%BB%CE%BB%CE%B7%CE%BB%CE%B1_%CE%BA%CE%B1%CE%B9_%CE%BA%CE%B1%CF%84%CE%B1%CE%BD%CE%B5%CE%BC%CE%B7%CE%BC%CE%AD%CE%BD%CE%B1_%CF%83%CF%85%CF%83%CF%84%CE%AE%CE%BC%CE%B1%CF%84%CE%B1" title="Παράλληλα και κατανεμημένα συστήματα" lang="el" hreflang="el">Ελληνικά</a></li>
+			<li class="interwiki-es"><a href="//es.wikipedia.org/wiki/Computaci%C3%B3n_distribuida" title="Computación distribuida" lang="es" hreflang="es">Español</a></li>
+			<li class="interwiki-eo"><a href="//eo.wikipedia.org/wiki/Disa_komputado" title="Disa komputado" lang="eo" hreflang="eo">Esperanto</a></li>
+			<li class="interwiki-fa"><a href="//fa.wikipedia.org/wiki/%D8%B1%D8%A7%DB%8C%D8%A7%D9%86%D8%B4_%D8%AA%D9%88%D8%B2%DB%8C%D8%B9%E2%80%8C%D8%B4%D8%AF%D9%87" title="رایانش توزیع‌شده" lang="fa" hreflang="fa">فارسی</a></li>
+			<li class="interwiki-fr"><a href="//fr.wikipedia.org/wiki/Calcul_distribu%C3%A9" title="Calcul distribué" lang="fr" hreflang="fr">Français</a></li>
+			<li class="interwiki-ko"><a href="//ko.wikipedia.org/wiki/%EB%B6%84%EC%82%B0_%EC%BB%B4%ED%93%A8%ED%8C%85" title="분산 컴퓨팅" lang="ko" hreflang="ko">한국어</a></li>
+			<li class="interwiki-id"><a href="//id.wikipedia.org/wiki/Komputasi_terdistribusi" title="Komputasi terdistribusi" lang="id" hreflang="id">Bahasa Indonesia</a></li>
+			<li class="interwiki-it"><a href="//it.wikipedia.org/wiki/Calcolo_distribuito" title="Calcolo distribuito" lang="it" hreflang="it">Italiano</a></li>
+			<li class="interwiki-he"><a href="//he.wikipedia.org/wiki/%D7%97%D7%99%D7%A9%D7%95%D7%91_%D7%9E%D7%91%D7%95%D7%96%D7%A8" title="חישוב מבוזר" lang="he" hreflang="he">עברית</a></li>
+			<li class="interwiki-kk"><a href="//kk.wikipedia.org/wiki/%D0%9C%D3%99%D0%BB%D1%96%D0%BC%D0%B5%D1%82%D1%82%D0%B5%D1%80%D0%B4%D1%96_%D2%AF%D0%BB%D0%B5%D1%81%D1%82%D1%96%D1%80%D0%B5_%D3%A9%D2%A3%D0%B4%D0%B5%D1%83" title="Мәліметтерді үлестіре өңдеу" lang="kk" hreflang="kk">Қазақша</a></li>
+			<li class="interwiki-lt"><a href="//lt.wikipedia.org/wiki/Paskirstytasis_skai%C4%8Diavimas" title="Paskirstytasis skaičiavimas" lang="lt" hreflang="lt">Lietuvių</a></li>
+			<li class="interwiki-hu"><a href="//hu.wikipedia.org/wiki/Elosztott_sz%C3%A1m%C3%ADt%C3%A1sok" title="Elosztott számítások" lang="hu" hreflang="hu">Magyar</a></li>
+			<li class="interwiki-mk"><a href="//mk.wikipedia.org/wiki/%D0%94%D0%B8%D1%81%D1%82%D1%80%D0%B8%D0%B1%D1%83%D0%B8%D1%80%D0%B0%D0%BD_%D0%BA%D0%BE%D0%BC%D0%BF%D1%98%D1%83%D1%82%D0%B5%D1%80%D1%81%D0%BA%D0%B8_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC" title="Дистрибуиран компјутерски систем" lang="mk" hreflang="mk">Македонски</a></li>
+			<li class="interwiki-ms"><a href="//ms.wikipedia.org/wiki/Pengkomputeran_teragih" title="Pengkomputeran teragih" lang="ms" hreflang="ms">Bahasa Melayu</a></li>
+			<li class="interwiki-nl"><a href="//nl.wikipedia.org/wiki/Distributed_computing" title="Distributed computing" lang="nl" hreflang="nl">Nederlands</a></li>
+			<li class="interwiki-ja"><a href="//ja.wikipedia.org/wiki/%E5%88%86%E6%95%A3%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0" title="分散コンピューティング" lang="ja" hreflang="ja">日本語</a></li>
+			<li class="interwiki-nn"><a href="//nn.wikipedia.org/wiki/Distribuert_datahandsaming" title="Distribuert datahandsaming" lang="nn" hreflang="nn">‪Norsk (nynorsk)‬</a></li>
+			<li class="interwiki-pl"><a href="//pl.wikipedia.org/wiki/Obliczenia_rozproszone" title="Obliczenia rozproszone" lang="pl" hreflang="pl">Polski</a></li>
+			<li class="interwiki-pt"><a href="//pt.wikipedia.org/wiki/Computa%C3%A7%C3%A3o_distribu%C3%ADda" title="Computação distribuída" lang="pt" hreflang="pt">Português</a></li>
+			<li class="interwiki-ro"><a href="//ro.wikipedia.org/wiki/Calcul_distribuit" title="Calcul distribuit" lang="ro" hreflang="ro">Română</a></li>
+			<li class="interwiki-ru"><a href="//ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%81%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Распределённые вычисления" lang="ru" hreflang="ru">Русский</a></li>
+			<li class="interwiki-simple"><a href="//simple.wikipedia.org/wiki/Distributed_computing" title="Distributed computing" lang="simple" hreflang="simple">Simple English</a></li>
+			<li class="interwiki-sk"><a href="//sk.wikipedia.org/wiki/Distribuovan%C3%BD_v%C3%BDpo%C4%8Det" title="Distribuovaný výpočet" lang="sk" hreflang="sk">Slovenčina</a></li>
+			<li class="interwiki-fi"><a href="//fi.wikipedia.org/wiki/Hajautetut_j%C3%A4rjestelm%C3%A4t" title="Hajautetut järjestelmät" lang="fi" hreflang="fi">Suomi</a></li>
+			<li class="interwiki-sv"><a href="//sv.wikipedia.org/wiki/Distributed_computing" title="Distributed computing" lang="sv" hreflang="sv">Svenska</a></li>
+			<li class="interwiki-ta"><a href="//ta.wikipedia.org/wiki/%E0%AE%B5%E0%AE%BF%E0%AE%B0%E0%AE%B5%E0%AE%B2%E0%AF%8D_%E0%AE%95%E0%AE%A3%E0%AE%BF%E0%AE%A9%E0%AE%BF_%E0%AE%9A%E0%AF%86%E0%AE%AF%E0%AF%8D%E0%AE%AE%E0%AF%81%E0%AE%B1%E0%AF%88" title="விரவல் கணினி செய்முறை" lang="ta" hreflang="ta">தமிழ்</a></li>
+			<li class="interwiki-tr"><a href="//tr.wikipedia.org/wiki/Da%C4%9F%C4%B1t%C4%B1k_hesaplama" title="Dağıtık hesaplama" lang="tr" hreflang="tr">Türkçe</a></li>
+			<li class="interwiki-uk"><a href="//uk.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B7%D0%BF%D0%BE%D0%B4%D1%96%D0%BB%D0%B5%D0%BD%D1%96_%D0%BE%D0%B1%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F" title="Розподілені обчислення" lang="uk" hreflang="uk">Українська</a></li>
+			<li class="interwiki-vi"><a href="//vi.wikipedia.org/wiki/%C4%90i%E1%BB%87n_to%C3%A1n_ph%C3%A2n_t%C3%A1n" title="Điện toán phân tán" lang="vi" hreflang="vi">Tiếng Việt</a></li>
+			<li class="interwiki-zh"><a href="//zh.wikipedia.org/wiki/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97" title="分布式计算" lang="zh" hreflang="zh">中文</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 7 May 2012 at 05:34.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.
+See <a href="//wikimediafoundation.org/wiki/Terms_of_use">Terms of use</a> for details.<br/>
+Wikipedia&reg; is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.<br /></li><li class="noprint"><a class='internal' href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Distributed_computing&amp;mobileaction=toggle_view_mobile" class="noprint">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/static-1.20wmf2/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script type="text/javascript">if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=skins.vector&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
+<script type="text/javascript">if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.legacy.mwsuggest","ext.gadget.teahouse","ext.vector.collapsibleNav","ext.vector.collapsibleTabs","ext.vector.editWarning","ext.vector.simpleSearch","ext.UserBuckets","ext.articleFeedback.startup","ext.articleFeedbackv5.startup","ext.markAsHelpful","ext.pageTriage.startup"], null, true);
+}</script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;303-4" type="text/javascript"></script>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
+<script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by srv202 in 0.120 secs. -->
+	</body>
+</html>

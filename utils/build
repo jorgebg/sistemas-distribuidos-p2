@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp ./src/* ./bin
+cd ./bin
+make
