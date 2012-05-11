@@ -106,10 +106,9 @@ void f_swap(char *src, char *dst){
 	
 	// Write code here
 	parametro4* parametro = malloc(sizeof(*parametro));
-	retorno2* retorno;
 
-	retorno = malloc(sizeof(*retorno));
-	bzero(retorno, sizeof(*retorno));
+	retorno2* retorno;
+	retorno = (retorno2*) calloc(1,sizeof(*retorno));
 
 	//Crea las variables locales para obtener la longitud del fichero
 	int total = 0;
@@ -121,8 +120,10 @@ void f_swap(char *src, char *dst){
 
 	//Abre un fichero
 	FILE *archivo = fopen(src,"r");
-	if(archivo == NULL)
+	if(archivo == NULL){
+		fprintf(stderr, "El fichero no existe \n");
 		exit(1);
+	}
 
 	//Crea la memoria de una cadena y copia a memoria el fichero
 	parametro->cadena = calloc(total, sizeof(char));
@@ -190,8 +191,10 @@ void f_hash(char *src){
 
 	//Abre un fichero
 	FILE *archivo = fopen(src,"r");
-	if(archivo == NULL)
-		exit(1);
+	if(archivo == NULL){
+			fprintf(stderr, "El fichero no existe \n");
+			exit(1);
+	}
 
 	//Crea la memoria de una cadena y copia a memoria el fichero
 	parametro->cadena = calloc(total, sizeof(char));
@@ -249,8 +252,10 @@ void f_check(char *src, int hash){
 
 	//Abre un fichero
 	FILE *archivo = fopen(src,"r");
-	if(archivo == NULL)
-		exit(1);
+	if(archivo == NULL){
+			fprintf(stderr, "El fichero no existe \n");
+			exit(1);
+	}
 
 	//Crea la memoria de una cadena y copia a memoria el fichero
 	parametro->cadena = calloc(total, sizeof(char));
