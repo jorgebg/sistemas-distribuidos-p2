@@ -179,41 +179,34 @@ void f_hash(char *src){
 	
 	// Write code here
 	parametro4* parametro = malloc(sizeof(*parametro));
-	parametro->ip = ipLocal;
-	parametro->port = 111;
 
-	//Obtiene los datos del fichero
-	FILE *archivo;
-	char caracteres[10];
+	//Crea las variables locales para obtener la longitud del fichero
+	int total = 0;
+	struct stat statFichero;
 
-	archivo = fopen(src,"r");
+	if(stat(src,&statFichero) < 0)
+        	exit(1);
+	total = statFichero.st_size;
+
+	//Abre un fichero
+	FILE *archivo = fopen(src,"r");
 	if(archivo == NULL)
 		exit(1);
 
-	int total = 0;
-	char* copia = calloc(total, sizeof(char));
-	char* resultado;
+	//Crea la memoria de una cadena y copia a memoria el fichero
+	parametro->cadena = calloc(total, sizeof(char));
+	fread(parametro->cadena,sizeof(char),total,archivo);
 
-	while (fgets(caracteres,10,archivo) != NULL)
-	{
-		total = total + 10;
-		resultado = calloc(total, sizeof(char));
-
-		strcpy(resultado, copia);
-		strcat(resultado, caracteres);
-		copia = calloc(total, sizeof(char));
-		strcpy(copia, resultado);
-	}
-
-	free(resultado);
+	//Cierra el fichero
 	fclose(archivo);
 
-	//Le envia la longitud del fichero
-	unsigned int longitud = strlen(copia);
-	parametro->longitud = longitud;
 
-	//Le envia un cadena
-	parametro->cadena = copia;
+	// Se le pasa la ip, el puerto y la longitud
+	parametro->ip = (char*)calloc(strlen(ipLocal),sizeof(char));
+	memcpy(parametro->ip, ipLocal, strlen(ipLocal));
+
+	parametro->port = 111;
+	parametro->longitud = total;
 
 	//Recibe el hash
 	unsigned int hash;
@@ -224,7 +217,10 @@ void f_hash(char *src){
 	//Se imprime por pantalla
 	fprintf(stderr, "%u\n", hash);
 
-	free(copia);
+	//Libera la memoria
+	free(parametro->ip);
+	free(parametro->cadena);
+	free(parametro);
 
 	//Se suma la llamada
 	_hash++;
@@ -242,41 +238,33 @@ void f_check(char *src, int hash){
 	
 	// Write code here
 	parametro5* parametro = malloc(sizeof(*parametro));
-	parametro->ip = ipLocal;
-	parametro->port = 111;
 
-	//Obtiene los datos del fichero
-	FILE *archivo;
-	char caracteres[10];
+	//Crea las variables locales para obtener la longitud del fichero
+	int total = 0;
+	struct stat statFichero;
 
-	archivo = fopen(src,"r");
+	if(stat(src,&statFichero) < 0)
+        	exit(1);
+	total = statFichero.st_size;
+
+	//Abre un fichero
+	FILE *archivo = fopen(src,"r");
 	if(archivo == NULL)
 		exit(1);
 
-	int total = 0;
-	char* copia = calloc(total, sizeof(char));
-	char* resultado;
+	//Crea la memoria de una cadena y copia a memoria el fichero
+	parametro->cadena = calloc(total, sizeof(char));
+	fread(parametro->cadena,sizeof(char),total,archivo);
 
-	while (fgets(caracteres,10,archivo) != NULL)
-	{
-		total = total + 10;
-		resultado = calloc(total, sizeof(char));
-
-		strcpy(resultado, copia);
-		strcat(resultado, caracteres);
-		copia = calloc(total, sizeof(char));
-		strcpy(copia, resultado);
-	}
-
-	free(resultado);
+	//Cierra el fichero
 	fclose(archivo);
 
-	//Le envia la longitud del texto
-	int longitud = strlen(copia);
-	parametro->longitud = longitud;
+	// Se le pasa la ip, el puerto y la longitud
+	parametro->ip = (char*)calloc(strlen(ipLocal),sizeof(char));
+	memcpy(parametro->ip, ipLocal, strlen(ipLocal));
 
-	//Le envia un cadena
-	parametro->cadena = copia;
+	parametro->port = 111;
+	parametro->longitud = total;
 
 	//Le envia el valor hash
 	parametro->hash = hash;
@@ -292,7 +280,10 @@ void f_check(char *src, int hash){
 	else
 		fprintf(stderr, "OK\n");
 
-	free(copia);
+	//Libera la memoria
+	free(parametro->ip);
+	free(parametro->cadena);
+	free(parametro);
 
 	//Se suma la llamada
 	_check++;
@@ -346,6 +337,7 @@ void f_quit(){
 	
 	// Write code here
 	int quit = f_quit_1(NULL, NULL, _client);
+	exit(quit);
 
 }
 
@@ -486,6 +478,7 @@ int main(int argc, char *argv[]){
 		}
 	}
 
+	//Obtiene la ip local
 	ipLocal = obtenerIpLocal();
 
 	//Llama a la consola

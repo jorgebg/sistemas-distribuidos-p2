@@ -183,6 +183,7 @@ int f_stat_1_svc(parametro7 *parametro, void *void_t, struct svc_req* req){
 }
 
 int f_quit_1_svc(void *a, int *quit,struct svc_req* req){
+	fprintf(stderr, "Quit \n");
 	return 1;
 }
 
