@@ -43,7 +43,6 @@ char* obtenerIpServer(char* server);
 
 int debug = 0;
 char* ipLocal;
-int port;
 CLIENT *_client;
 
 
@@ -111,7 +110,7 @@ void f_swap(char *src, char *dst){
 	retorno = (retorno2*) calloc(1,sizeof(*retorno));
 
 	//Crea las variables locales para obtener la longitud del fichero
-	int total = 0;
+	unsigned int total = 0;
 	struct stat statFichero;
 
 	//Obtiene la informacion de un fichero
@@ -187,7 +186,7 @@ void f_hash(char *src){
 	parametro4* parametro = malloc(sizeof(*parametro));
 
 	//Crea las variables locales para obtener la longitud del fichero
-	int total = 0;
+	unsigned int total = 0;
 	struct stat statFichero;
 
 	//Obtiene la informacion de un fichero
@@ -251,7 +250,7 @@ void f_check(char *src, int hash){
 	parametro5* parametro = malloc(sizeof(*parametro));
 
 	//Crea las variables locales para obtener la longitud del fichero
-	int total = 0;
+	unsigned int total = 0;
 	struct stat statFichero;
 
 	//Obtiene la informacion de un fichero
@@ -353,6 +352,10 @@ void f_quit(){
 	
 	// Write code here
 	int quit = f_quit_1(NULL, NULL, _client);
+
+	//Se cierra el cliente
+	clnt_destroy (_client);
+
 	exit(quit);
 
 }
@@ -494,7 +497,7 @@ int main(int argc, char *argv[]){
 		char* ip = obtenerIpServer(server);
 		_client = clnt_create (ip, SERVICIOPROG, SERVICIOVERS, "TCP");
 		if (_client == NULL) {
-			perror("Error creando el cliente");
+			fprintf(stderr, "c> Error en la conexion con el servidor %s \n", server);
 			exit(-1);
 		}
 	}
