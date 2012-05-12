@@ -114,14 +114,17 @@ void f_swap(char *src, char *dst){
 	int total = 0;
 	struct stat statFichero;
 
-	if(stat(src,&statFichero) < 0)
-        	exit(1);
+	//Obtiene la informacion de un fichero
+	if(stat(src,&statFichero) < 0){
+		perror("El fichero de origen no existe");
+        exit(1);
+	}
 	total = statFichero.st_size;
 
 	//Abre un fichero
 	FILE *archivo = fopen(src,"r");
 	if(archivo == NULL){
-		fprintf(stderr, "El fichero no existe \n");
+		perror("El fichero de origen no se ha abierto");
 		exit(1);
 	}
 
@@ -147,8 +150,10 @@ void f_swap(char *src, char *dst){
 
 	//Graba los datos en un fichero
 	FILE *archivo2 = fopen(dst,"w");
-	if(archivo2 == NULL)
+	if(archivo2 == NULL){
+		perror("El fichero de destino no se ha abierto");
 		exit(1);
+	}
 
 	//Recibe la nueva cadena y la mete en el archivo
 	fputs(retorno->cadena, archivo2);
@@ -185,8 +190,11 @@ void f_hash(char *src){
 	int total = 0;
 	struct stat statFichero;
 
-	if(stat(src,&statFichero) < 0)
-        	exit(1);
+	//Obtiene la informacion de un fichero
+	if(stat(src,&statFichero) < 0){
+		perror("El fichero de origen no existe");
+        exit(1);
+	}
 	total = statFichero.st_size;
 
 	//Abre un fichero
@@ -246,8 +254,11 @@ void f_check(char *src, int hash){
 	int total = 0;
 	struct stat statFichero;
 
-	if(stat(src,&statFichero) < 0)
-        	exit(1);
+	//Obtiene la informacion de un fichero
+	if(stat(src,&statFichero) < 0){
+		perror("El fichero de origen no existe");
+        exit(1);
+	}
 	total = statFichero.st_size;
 
 	//Abre un fichero
@@ -469,6 +480,11 @@ int main(int argc, char *argv[]){
 	 *  NO SE SI HAY QUE USAR STDERR O STDOUT. Realmente no piden salida, se puede usar printf.
 	 **/
 
+	if(argc < 3 | argc > 4){
+		perror("Numero de parametros incorrectos: ./client -d -s <ip>");
+		exit(-1);
+	}
+
 	//Se crea el cliente
 	_client = malloc(sizeof(*_client));
 	_client = clnt_create (server, SERVICIOPROG, SERVICIOVERS, "TCP");
@@ -487,7 +503,8 @@ int main(int argc, char *argv[]){
 	ipLocal = obtenerIpLocal();
 
 	//Llama a la consola
-	shell();
+
+		shell();
 
 	//Se cierra el cliente
 	clnt_destroy (_client);
